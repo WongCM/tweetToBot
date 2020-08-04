@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>部署文档 | 基于CoolQ的推特BOT服务 用户文档</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="部署部署CoolQ安装CoolQ并按照帖子内文档部署。 Air Pro Docker  Docker中部署Air 12mkdir coolq-datadocker run --name&#x3D;coolq -d -p &lt;VNC Port&gt;:9000 -v &#x2F;root&#x2F;coolq-data:&#x2F;home&#x2F;user&#x2F;coolq -e VNC_PASSWD&#x3D;&lt;Password&gt; -e CO">
+<meta property="og:type" content="article">
+<meta property="og:title" content="部署文档">
+<meta property="og:url" content="https://chenxuan353.github.io/tweetToBot/2020/06/08/deploy-docs/index.html">
+<meta property="og:site_name" content="基于CoolQ的推特BOT服务 用户文档">
+<meta property="og:description" content="部署部署CoolQ安装CoolQ并按照帖子内文档部署。 Air Pro Docker  Docker中部署Air 12mkdir coolq-datadocker run --name&#x3D;coolq -d -p &lt;VNC Port&gt;:9000 -v &#x2F;root&#x2F;coolq-data:&#x2F;home&#x2F;user&#x2F;coolq -e VNC_PASSWD&#x3D;&lt;Password&gt; -e CO">
+<meta property="article:published_time" content="2020-06-08T02:16:57.000Z">
+<meta property="article:modified_time" content="2020-08-04T08:27:26.002Z">
+<meta property="article:author" content="ChenXuan &amp; Cyame">
+<meta property="article:tag" content="使用">
+<meta property="article:tag" content="文档">
+<meta property="article:tag" content="部署">
+<meta property="article:tag" content="注意事项">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/tweetToBot/atom.xml" title="基于CoolQ的推特BOT服务 用户文档" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/tweetToBot/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/tweetToBot/" id="logo">基于CoolQ的推特BOT服务 用户文档</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/tweetToBot/" id="subtitle">tweetToQQbot, an automatic bot service.</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/tweetToBot/">Home</a>
+        
+          <a class="main-nav-link" href="/tweetToBot/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/tweetToBot/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://chenxuan353.github.io/tweetToBot"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-deploy-docs" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/tweetToBot/2020/06/08/deploy-docs/" class="article-date">
+  <time datetime="2020-06-08T02:16:57.000Z" itemprop="datePublished">2020-06-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/tweetToBot/categories/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/">项目文档</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      部署文档
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><h3 id="部署CoolQ"><a href="#部署CoolQ" class="headerlink" title="部署CoolQ"></a>部署CoolQ</h3><p>安装CoolQ并按照帖子内文档部署。</p>
+<p><a href="https://cqp.cc/t/23253" target="_blank" rel="noopener">Air</a> <a href="https://cqp.cc/t/14901" target="_blank" rel="noopener">Pro</a> <a href="https://cqp.cc/t/34558" target="_blank" rel="noopener">Docker</a></p>
+<ul>
+<li><p>Docker中部署Air</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir coolq-data</span><br><span class="line">docker run --name=coolq -d -p &lt;VNC Port&gt;:9000 -v /root/coolq-data:/home/user/coolq -e VNC_PASSWD=&lt;Password&gt; -e COOLQ_ACCOUNT=&lt;QQ&gt; coolq/wine-coolq</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<ul>
+<li><p>Docker中部署Pro</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir coolq</span><br><span class="line">docker run --name=coolq -d -p &lt;VNC Port&gt;:9000 -v `pwd`/coolq:/home/user/coolq -e COOLQ_ACCOUNT=&lt;QQ ID&gt; -e COOLQ_URL=http://dlsec.cqp.me/cqp-full -e VNC_PASSWD=&lt;Password&gt; coolq/wine-coolq</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>※ 其中9000为默认内部端口 映射到指定的VNC端口 故在后面操作图形化界面时 需通过</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HOST IP:VNC Port</span><br></pre></td></tr></table></figure>
+
+<p>的地址打开。</p>
+<p>*<em>如需使用除搬运推文以外的其他功能(烤推等涉及图片发送的功能) *</em></p>
+<p><strong>请务必<a href="https://cqp.me/user/" target="_blank" rel="noopener">捐赠CQP项目</a>以使用<a href="https://cqp.cc/t/14901" target="_blank" rel="noopener">CoolQ Pro</a></strong></p>
+<h3 id="启动插件"><a href="#启动插件" class="headerlink" title="启动插件"></a>启动插件</h3><h4 id="下载CPK依赖"><a href="#下载CPK依赖" class="headerlink" title="下载CPK依赖"></a>下载CPK依赖</h4><ul>
+<li>Windows平台</li>
+</ul>
+<p>下载<a href="https://github.com/richardchien/coolq-http-api/releases" target="_blank" rel="noopener">CQHttp</a>的<a href="https://github.com/richardchien/coolq-http-api/releases/download/v4.15.0/io.github.richardchien.coolqhttpapi.cpk" target="_blank" rel="noopener">CPK依赖包</a>并安装(放到依赖包位置并<strong>初次启动后进行配置</strong>)</p>
+<ul>
+<li>Docker for Linux</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/richardchien/coolq-http-api/releases/download/v4.15.0/io.github.richardchien.coolqhttpapi.cpk</span><br></pre></td></tr></table></figure>
+
+<p><em>如在Docker中部署请在此处启动插件服务</em></p>
+<h4 id="配置CPK插件"><a href="#配置CPK插件" class="headerlink" title="配置CPK插件"></a>配置CPK插件</h4><p>在CQ根目录下<code>data/app/io.github.richardchien.coolqhttpapi/config/</code>文件夹内，找到<code>&lt;QQ号&gt;.json</code>的JSON配置文件（须初次启动后自动生成）</p>
+<p><strong>在其中添加两行以打开消息推送</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">"rate_limit_interval":500,</span><br><span class="line">"enable_rate_limited_actions": true,</span><br></pre></td></tr></table></figure>
+
+<p>本插件支持HTTP和WS两种模式，故可根据官方文档中<a href="https://cqhttp.cc/docs/4.15/#/Configuration" target="_blank" rel="noopener">配置</a>部分进行操作。</p>
+<p>绝大部分参数无需修改，但请保证打开http/ws_reverse/ws其中之一，并打开heartbeat以确保全部功能可用。基本操作也可参见Nonebot文档中的<a href="https://nonebot.cqp.moe/guide/getting-started.html#%E9%85%8D%E7%BD%AE-cqhttp-%E6%8F%92%E4%BB%B6" target="_blank" rel="noopener">基本配置说明</a></p>
+<p>下面给出一个配置范例</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"$schema"</span>: <span class="string">"https://cqhttp.cc/config-schema.json"</span>,</span><br><span class="line">    <span class="attr">"host"</span>: <span class="string">"0.0.0.0"</span>,</span><br><span class="line">    <span class="attr">"port"</span>: <span class="number">5700</span>,</span><br><span class="line">    <span class="attr">"use_http"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"ws_host"</span>: <span class="string">"0.0.0.0"</span>,</span><br><span class="line">    <span class="attr">"ws_port"</span>: <span class="number">6700</span>,</span><br><span class="line">    <span class="attr">"use_ws"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"ws_reverse_url"</span>: <span class="string">"ws://127.0.0.1:8087/ws/"</span>,</span><br><span class="line">    <span class="attr">"ws_reverse_api_url"</span>: <span class="string">""</span>,</span><br><span class="line">    <span class="attr">"ws_reverse_event_url"</span>: <span class="string">""</span>,</span><br><span class="line">    <span class="attr">"ws_reverse_reconnect_interval"</span>: <span class="number">3000</span>,</span><br><span class="line">    <span class="attr">"ws_reverse_reconnect_on_code_1000"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"use_ws_reverse"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"post_url"</span>: <span class="string">"http://0.0.0.0:8890"</span>,</span><br><span class="line">    <span class="attr">"access_token"</span>: <span class="string">""</span>,</span><br><span class="line">    <span class="attr">"rate_limit_interval"</span>:<span class="number">500</span>,</span><br><span class="line">    <span class="attr">"enable_rate_limited_actions"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"enable_heartbeat"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"secret"</span>: <span class="string">""</span>,</span><br><span class="line">    <span class="attr">"post_message_format"</span>: <span class="string">"string"</span>,</span><br><span class="line">    <span class="attr">"serve_data_files"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"update_source"</span>: <span class="string">"global"</span>,</span><br><span class="line">    <span class="attr">"update_channel"</span>: <span class="string">"stable"</span>,</span><br><span class="line">    <span class="attr">"auto_check_update"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"auto_perform_update"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"show_log_console"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"log_level"</span>: <span class="string">"info"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id=""><a href="#" class="headerlink" title=""></a></h5><table>
+<thead>
+<tr>
+<th>配置文件</th>
+<th>注释说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>“$schema”: “<a href="https://cqhttp.cc/config-schema.json&quot;" target="_blank" rel="noopener">https://cqhttp.cc/config-schema.json&quot;</a></td>
+<td></td>
+</tr>
+<tr>
+<td>“host”: “0.0.0.0”</td>
+<td>HTTP协议 事件上报IP（监听IP）<strong>开启时须正确配置</strong></td>
+</tr>
+<tr>
+<td>“port”: 5700</td>
+<td>HTTP协议 事件上报接口（监听接口）<strong>开启时须正确配置</strong></td>
+</tr>
+<tr>
+<td>“use_http”: true</td>
+<td>启用HTTP <strong>使用时开启</strong></td>
+</tr>
+<tr>
+<td>“ws_host”: “0.0.0.0”</td>
+<td>正向WS IP</td>
+</tr>
+<tr>
+<td>“ws_port”: 6700</td>
+<td>正向WS端口</td>
+</tr>
+<tr>
+<td>“use_ws”: false</td>
+<td>启用正向WS <strong>本项目不使用 建议关闭</strong></td>
+</tr>
+<tr>
+<td>“ws_reverse_url”: “ws://127.0.0.1:8087/ws/“</td>
+<td>反向WS地址 <strong>务必正确填写</strong></td>
+</tr>
+<tr>
+<td>“ws_reverse_api_url”: “”</td>
+<td>反向WS API地址 <strong>如填写反向WS地址则无需填写</strong></td>
+</tr>
+<tr>
+<td>“ws_reverse_event_url”: “”</td>
+<td>反向WS 事件上报地址 <strong>如填写反向WS地址则无需填写</strong></td>
+</tr>
+<tr>
+<td>“ws_reverse_reconnect_interval”: 3000</td>
+<td>重连间隔 <strong>无需修改</strong></td>
+</tr>
+<tr>
+<td>“ws_reverse_reconnect_on_code_1000”: true</td>
+<td>是否重连 <strong>无需修改</strong></td>
+</tr>
+<tr>
+<td>“use_ws_reverse”: true</td>
+<td>启用反向WS <strong>使用时开启 建议优先使用</strong></td>
+</tr>
+<tr>
+<td>“post_url”: “<a href="http://0.0.0.0:8890&quot;">http://0.0.0.0:8890&quot;</a></td>
+<td>HTTP POST地址 <strong>使用HTTP协议填写</strong></td>
+</tr>
+<tr>
+<td>“access_token”: “”</td>
+<td>CQHTTP TOKEN <strong>无需填写</strong></td>
+</tr>
+<tr>
+<td>“rate_limit_interval”:500</td>
+<td>频率限制 <strong>务必添加</strong></td>
+</tr>
+<tr>
+<td>“enable_rate_limited_actions”: true</td>
+<td>开启频率限制 <strong>务必打开</strong></td>
+</tr>
+<tr>
+<td>“enable_heartbeat”: true</td>
+<td>开启心跳 <strong>务必打开</strong></td>
+</tr>
+<tr>
+<td>“secret”: “”,<br/>“post_message_format”: “string”,<br/>“serve_data_files”: false,<br/>“update_source”: “global”,<br/>“update_channel”: “stable”,<br/>“auto_check_update”: false,<br/>“auto_perform_update”: false,<br/>“show_log_console”: true,<br/>“log_level”: “info”</td>
+<td>各项均可保持默认 <strong>无需修改</strong></td>
+</tr>
+</tbody></table>
+<h5 id="关于协议"><a href="#关于协议" class="headerlink" title="关于协议"></a>关于协议</h5><p>本项目支持使用HTTP或反向WS协议进行通信，其中</p>
+<ul>
+<li>使用HTTP协议<ul>
+<li>事件上报地址 “host”与”port”</li>
+<li>POST通信地址 “post_url”(host:port)</li>
+</ul>
+</li>
+<li>使用反向WS协议<ul>
+<li>API地址 “ws_reverse_url”</li>
+</ul>
+</li>
+</ul>
+<p>简单来说，HTTP的收发分别使用两个地址，而反向WS协议使用同一个地址。</p>
+<p>因此可以通过同时打开HTTP和反向WS协议实现使用一个BOT同时连接两个后端服务。</p>
+<p><strong>具体配置过程在<a href="https://github.com/chenxuan353/tweetToQQbot/blob/master/readme.md#多服务配置" target="_blank" rel="noopener">多服务配置</a>中说明。</strong></p>
+<h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><h4 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h4><h5 id="PYPI依赖"><a href="#PYPI依赖" class="headerlink" title="PYPI依赖"></a>PYPI依赖</h5><p>手动安装依赖</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install nonebot[scheduler] selenium xmltodict threading urllib tweepy</span><br></pre></td></tr></table></figure>
+
+<p>或者可以使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip -r requirement.txt</span><br></pre></td></tr></table></figure>
+
+<p>进行一键安装</p>
+<p><strong>如进行一键依赖安装时发送报错 请检查Python版本是否为3.7</strong></p>
+<h5 id="Chrome浏览器与ChromeDriver"><a href="#Chrome浏览器与ChromeDriver" class="headerlink" title="Chrome浏览器与ChromeDriver"></a>Chrome浏览器与ChromeDriver</h5><p>您可以参考<a href="https://blog.csdn.net/Fiverya/article/details/98869750" target="_blank" rel="noopener">本教程</a></p>
+<h4 id="添加配置"><a href="#添加配置" class="headerlink" title="添加配置"></a>添加配置</h4><p>将config_example.py改名为config.py并填写内部的配置信息</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv config_example.py config.py</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi config.py</span><br></pre></td></tr></table></figure>
+<p><strong>内部各项均已注明 请根据注释进行配置（不填请保留字段 不推荐删除）</strong></p>
+<h5 id="多服务配置"><a href="#多服务配置" class="headerlink" title="多服务配置"></a>多服务配置</h5><p>CQHTTP为nonebot提供了HTTP和反向WS两种通信协议 具体配置方法如下</p>
+<blockquote>
+<p>为方便书写与描述</p>
+<p>称呼<code>data/app/io.github.richardchien.coolqhttpapi/config/</code>文件夹内含有QQ号的JSON文件为<strong>插件配置</strong></p>
+<p>称呼本项目中<code>config.py</code>文件为<strong>项目配置</strong></p>
+</blockquote>
+<h6 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h6><ul>
+<li><p>事件上报地址</p>
+<p>编辑插件配置中<code>host</code>与<code>port</code>字段</p>
+<p>并与项目配置中<code>API_ROOT</code>字段保持一致</p>
+</li>
+<li><p>POST通信地址</p>
+<p>编辑插件配置中<code>post_url</code>字段 <strong>※ 须添加<code>http://</code>作为前缀</strong></p>
+<p>并与项目配置中<code>NONEBOT_HOST</code>和<code>NONEBOT_PORT</code>所指向地址保持一致</p>
+</li>
+</ul>
+<h6 id="反向WS协议"><a href="#反向WS协议" class="headerlink" title="反向WS协议"></a>反向WS协议</h6><ul>
+<li><p>API地址</p>
+<p>编辑插件配置中<code>ws_reverse_url</code>字段（只修改IP和端口即可）</p>
+<p>并与项目配置中<code>NONEBOT_HOST</code>和<code>NONEBOT_PORT</code>所指向地址保持一致</p>
+<p>（API_ROOT与反向WS无关 如<strong>在使用反向WS后端</strong> <strong>必须</strong>注释掉本变量）</p>
+</li>
+</ul>
+<h4 id="启动项目"><a href="#启动项目" class="headerlink" title="启动项目"></a>启动项目</h4><p>然后就可以用start.py启动项目了</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python start.py</span><br></pre></td></tr></table></figure>
+
+<h4 id="启动插件-1"><a href="#启动插件-1" class="headerlink" title="启动插件"></a>启动插件</h4><p>在Docker指定的端口通过HTTP访问服务器，在浏览器中键入：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">服务器IP:指定端口</span><br></pre></td></tr></table></figure>
+
+<p>访问NoVNC控制台。</p>
+<p>输入密码后可进入Docker内置的Wine环境，通过可视化方式操作CoolQ客户端，</p>
+<p>请登录后在插件管理中打开CQHTTP插件(请确保配置环节中CQHTTP已正确安装)。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://chenxuan353.github.io/tweetToBot/2020/06/08/deploy-docs/" data-id="ckdfon4zz00017ssyfgx5airs" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tweetToBot/tags/%E4%BD%BF%E7%94%A8/" rel="tag">使用</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tweetToBot/tags/%E6%96%87%E6%A1%A3/" rel="tag">文档</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tweetToBot/tags/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" rel="tag">注意事项</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tweetToBot/tags/%E9%83%A8%E7%BD%B2/" rel="tag">部署</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/tweetToBot/2020/06/08/command-docs/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          命令使用文档
+        
+      </div>
+    </a>
+  
+  
+    <a href="/tweetToBot/2020/06/08/develop-status/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">开发情况</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/tweetToBot/categories/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/">项目文档</a></li><li class="category-list-item"><a class="category-list-link" href="/tweetToBot/categories/%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8B/">项目简介</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E4%BD%BF%E7%94%A8/" rel="tag">使用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E5%8A%9F%E8%83%BD/" rel="tag">功能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E5%91%BD%E4%BB%A4/" rel="tag">命令</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E5%BC%80%E5%8F%91/" rel="tag">开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E6%83%85%E5%86%B5/" rel="tag">情况</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E6%96%87%E6%A1%A3/" rel="tag">文档</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E6%A6%82%E8%BF%B0/" rel="tag">概述</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" rel="tag">注意事项</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E7%AE%80%E4%BB%8B/" rel="tag">简介</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E9%83%A8%E7%BD%B2/" rel="tag">部署</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tweetToBot/tags/%E4%BD%BF%E7%94%A8/" style="font-size: 15px;">使用</a> <a href="/tweetToBot/tags/%E5%8A%9F%E8%83%BD/" style="font-size: 10px;">功能</a> <a href="/tweetToBot/tags/%E5%91%BD%E4%BB%A4/" style="font-size: 10px;">命令</a> <a href="/tweetToBot/tags/%E5%BC%80%E5%8F%91/" style="font-size: 10px;">开发</a> <a href="/tweetToBot/tags/%E6%83%85%E5%86%B5/" style="font-size: 15px;">情况</a> <a href="/tweetToBot/tags/%E6%96%87%E6%A1%A3/" style="font-size: 15px;">文档</a> <a href="/tweetToBot/tags/%E6%A6%82%E8%BF%B0/" style="font-size: 10px;">概述</a> <a href="/tweetToBot/tags/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" style="font-size: 20px;">注意事项</a> <a href="/tweetToBot/tags/%E7%AE%80%E4%BB%8B/" style="font-size: 15px;">简介</a> <a href="/tweetToBot/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">部署</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/tweetToBot/archives/2020/06/">June 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/tweetToBot/2020/06/08/command-docs/">命令使用文档</a>
+          </li>
+        
+          <li>
+            <a href="/tweetToBot/2020/06/08/deploy-docs/">部署文档</a>
+          </li>
+        
+          <li>
+            <a href="/tweetToBot/2020/06/08/develop-status/">开发情况</a>
+          </li>
+        
+          <li>
+            <a href="/tweetToBot/2020/06/08/introduction/">项目概述</a>
+          </li>
+        
+          <li>
+            <a href="/tweetToBot/2020/06/08/test/">test</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 ChenXuan &amp; Cyame<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/tweetToBot/" class="mobile-nav-link">Home</a>
+  
+    <a href="/tweetToBot/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/tweetToBot/fancybox/jquery.fancybox.css">
+
+  
+<script src="/tweetToBot/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/tweetToBot/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

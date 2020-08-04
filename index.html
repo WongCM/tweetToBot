@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>基于CoolQ的推特BOT服务 用户文档</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="推特更新监听转发机器人">
+<meta property="og:type" content="website">
+<meta property="og:title" content="基于CoolQ的推特BOT服务 用户文档">
+<meta property="og:url" content="https://chenxuan353.github.io/tweetToBot/index.html">
+<meta property="og:site_name" content="基于CoolQ的推特BOT服务 用户文档">
+<meta property="og:description" content="推特更新监听转发机器人">
+<meta property="article:author" content="ChenXuan &amp; Cyame">
+<meta property="article:tag" content="监听">
+<meta property="article:tag" content=" QQ">
+<meta property="article:tag" content=" 机器人">
+<meta property="article:tag" content=" 酷Q">
+<meta property="article:tag" content=" 推特">
+<meta property="article:tag" content=" 字幕组">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/tweetToBot/atom.xml" title="基于CoolQ的推特BOT服务 用户文档" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/tweetToBot/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/tweetToBot/" id="logo">基于CoolQ的推特BOT服务 用户文档</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/tweetToBot/" id="subtitle">tweetToQQbot, an automatic bot service.</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/tweetToBot/">Home</a>
+        
+          <a class="main-nav-link" href="/tweetToBot/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/tweetToBot/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://chenxuan353.github.io/tweetToBot"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-command-docs" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/tweetToBot/2020/06/08/command-docs/" class="article-date">
+  <time datetime="2020-06-08T02:17:51.000Z" itemprop="datePublished">2020-06-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/tweetToBot/2020/06/08/command-docs/">命令使用文档</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="本BOT推送命令使用说明"><a href="#本BOT推送命令使用说明" class="headerlink" title="本BOT推送命令使用说明"></a>本BOT推送命令使用说明</h2><ol>
+<li><p><strong>调用命令</strong>实现功能需要以<code>&lt;命令标识符&gt;&lt;命令&gt; &lt;参数表&gt;</code>的形式调用，具体格式已在各命令中说明。</p>
+<ul>
+<li><p>默认标识符为<code>!</code>或<code>！</code>，故在调用时请添加命令标识符，例如使用帮助命令时，请在聊天室(群/私聊)中键入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!about</span><br></pre></td></tr></table></figure>
+
+<p>而非仅发送<code>about</code>。</p>
+</li>
+<li><p>关于权限，部分命令由于涉及重要推送设置或推送大量信息。为了保护BOT正常运行以及群内使用体验，故操作需要管理权限(超级管理员/群主/管理员)进行操作才会进行响应。</p>
+</li>
+<li><p>在权限中有<code>@bot</code>字段的，群聊消息需要在添加标识符的同时@所使用的的BOT账号，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;@BOT&gt; !getuserinfo shirakamifubuki</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>命令和参数表，以及参数表各参数之间需要以<strong>一个半角空格</strong>作为空格，<strong>空参数亦不能省略空格</strong>。</p>
+<ul>
+<li>同义格式可以替换<code>&lt;命令&gt;</code>使用，功能完全相同(通常提供中文支持或缩写)</li>
+</ul>
+</li>
+<li><p>参数注释</p>
+<ul>
+<li><p>推文推送命令列表中提到的<code>&lt;推特用户ID&gt;</code>是指由英文数字组成的用户名（即在@时会显示的文本）。</p>
+</li>
+<li><p>烤推命令列表中提到的<code>&lt;推文ID&gt;</code>为推文<code>status</code>字段后19位(或以上)10进制数码，<code>&lt;压缩推文ID&gt;</code>为推文推送时附带的字符串，可使用相关命令互相转换。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>!注意!：如果监听列表里没有监听对象则全局设置会被重置。</strong></p>
+</li>
+</ol>
+<h2 id="命令列表"><a href="#命令列表" class="headerlink" title="命令列表"></a>命令列表</h2><h3 id="BOT相关命令"><a href="#BOT相关命令" class="headerlink" title="BOT相关命令"></a>BOT相关命令</h3><h4 id="帮助-about"><a href="#帮助-about" class="headerlink" title="帮助 about"></a>帮助 <code>about</code></h4><ul>
+<li>命令格式：<code>about</code></li>
+<li>同义格式：<code>帮助</code>、<code>关于</code>、<code>help</code></li>
+<li>所需权限：无限制</li>
+<li>功能说明：返回转推bot的关于消息</li>
+</ul>
+<h4 id="信息反馈-feedback"><a href="#信息反馈-feedback" class="headerlink" title="信息反馈 feedback"></a>信息反馈 <code>feedback</code></h4><ul>
+<li>命令格式：<code>feedback &lt;信息&gt;</code></li>
+<li>同义格式：<code>Feedback</code>、<code>反馈</code></li>
+<li>所需权限：超级管理员/群管理/群主</li>
+<li>功能说明：所发送的信息将会反馈到后台日志供开发者查看 并可由开发者查看后处理回复反馈</li>
+</ul>
+<h4 id="处理反馈-dealfeedback"><a href="#处理反馈-dealfeedback" class="headerlink" title="处理反馈 dealfeedback"></a><em>处理反馈 <code>dealfeedback</code></em></h4><ul>
+<li>命令格式：<code>feedback &lt;编号&gt; &lt;反馈内容&gt;</code></li>
+<li>同义格式：<code>处理反馈</code>、<code>反馈处理</code>、<code>dealFeedback</code></li>
+<li>所需权限：仅开发者</li>
+<li>功能说明：开发者用于回复信息反馈内容的命令</li>
+</ul>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h3 id="推文推送命令"><a href="#推文推送命令" class="headerlink" title="推文推送命令"></a>推文推送命令</h3><h4 id="启动监听-runTweetListener"><a href="#启动监听-runTweetListener" class="headerlink" title="启动监听 runTweetListener"></a>启动监听 <code>runTweetListener</code></h4><ul>
+<li><p>命令格式：<code>runTweetListener</code></p>
+</li>
+<li><p>同义格式：<code>启动监听</code></p>
+</li>
+<li><p>所需权限：超级管理员, @bot</p>
+</li>
+<li><p>功能说明：用于推特流断连后尝试重启监听 如已启动则会警告</p>
+</li>
+</ul>
+<h4 id="移除全部监听-delall"><a href="#移除全部监听-delall" class="headerlink" title="移除全部监听 delall"></a>移除全部监听 <code>delall</code></h4><ul>
+<li><p>命令格式：<code>delall</code></p>
+</li>
+<li><p>同义格式：<code>这里单推bot</code></p>
+</li>
+<li><p>所需权限：超级管理员/群主, @bot</p>
+</li>
+<li><p>功能：移除当前私聊/群的所有监听</p>
+</li>
+</ul>
+<h4 id="查看监听列表-getpushlist"><a href="#查看监听列表-getpushlist" class="headerlink" title="查看监听列表 getpushlist"></a>查看监听列表 <code>getpushlist</code></h4><ul>
+<li><p>命令格式：<code>getpushlist &lt;页码-可选&gt;</code></p>
+</li>
+<li><p>同义格式：<code>DD列表</code></p>
+</li>
+<li><p>所需权限：超级管理员/群管理/群主/好友私聊</p>
+</li>
+<li><p>功能：获取当前私聊/群的监听列表，页数默认为1。</p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/chenxuan353/tweetToQQbot/master/readme/image-20200428114040218.png" alt="image-20200428114040218"></p>
+<h4 id="获取用户信息-getuserinfo"><a href="#获取用户信息-getuserinfo" class="headerlink" title="获取用户信息 getuserinfo"></a>获取用户信息 <code>getuserinfo</code></h4><ul>
+<li><p>命令格式：<code>getuserinfo &lt;推特用户ID&gt;</code></p>
+</li>
+<li><p>同义格式：<code>查询推特用户 &lt;推特用户ID&gt;</code> </p>
+</li>
+<li><p>所需权限：超级管理员/好友私聊/群管理/群主, @bot</p>
+</li>
+<li><p>功能：获取当前私聊/群的监听列表</p>
+</li>
+</ul>
+<p>例：<code>getuserinfo shiranuiflare</code></p>
+<p><img src="https://raw.githubusercontent.com/chenxuan353/tweetToQQbot/master/readme/image-20200428113938381.png" alt="image-20200428113938381"></p>
+<h4 id="添加监听对象-addone"><a href="#添加监听对象-addone" class="headerlink" title="添加监听对象 addone"></a>添加监听对象 <code>addone</code></h4><ul>
+<li><p>命令格式：<code>addone &lt;推特用户ID&gt; &lt;称呼&gt; &lt;描述&gt;</code></p>
+</li>
+<li><p>同义格式：<code>给俺D一个 &lt;推特用户ID&gt; &lt;称呼&gt; &lt;描述&gt;</code></p>
+</li>
+<li><p>所需权限：超级管理员/好友私聊/群管理/群主, @bot</p>
+</li>
+<li><p>功能说明：添加一个用户到本群监听</p>
+</li>
+<li><p>使用例：<code>给俺D一个 shirakamifubuki 吹雪 我永远喜欢小狐狸</code></p>
+<p>(不设置昵称)使用例：<code>给俺D一个 shirakamifubuki  我永远喜欢小狐狸</code></p>
+<p>(完全无参数)使用例：<code>给俺D一个 shirakamifubuki</code></p>
+<p><strong>※ 跨参数设置同样需要空格分割，完全不设置参数时可以不添加空格</strong></p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/chenxuan353/tweetToQQbot/master/readme/image-20200428113806819.png" alt="image-20200428113806819"></p>
+<h4 id="删除监听对象-delone"><a href="#删除监听对象-delone" class="headerlink" title="删除监听对象 delone"></a>删除监听对象 <code>delone</code></h4><ul>
+<li><p>命令格式：<code>delone &lt;推特用户ID&gt;</code></p>
+</li>
+<li><p>同义格式：<code>我不想D了</code></p>
+</li>
+<li><p>所需权限：超级管理员/群管理/群主/好友私聊, @bot</p>
+</li>
+<li><p>功能说明：移除一个本群监听的用户</p>
+</li>
+</ul>
+<h4 id="显示BOT推送设置-getGroupSetting"><a href="#显示BOT推送设置-getGroupSetting" class="headerlink" title="显示BOT推送设置 getGroupSetting"></a>显示BOT推送设置 getGroupSetting</h4><ul>
+<li><p>命令格式：<code>getGroupSetting</code></p>
+</li>
+<li><p>同义格式：<code>全局设置列表</code></p>
+</li>
+<li><p>所需权限：超级管理员/群管理/群主/好友私聊, @bot</p>
+</li>
+<li><p>功能说明：显示当前私聊/群的全局推送设置</p>
+</li>
+</ul>
+<h4 id="显示推送设置-getSetting"><a href="#显示推送设置-getSetting" class="headerlink" title="显示推送设置 getSetting"></a>显示推送设置 getSetting</h4><ul>
+<li><p>命令格式：<code>getSetting &lt;推特用户ID&gt;</code></p>
+</li>
+<li><p>同义格式：<code>对象设置列表</code></p>
+</li>
+<li><p>所需权限：超级管理员/群管理/群主/好友私聊, @bot</p>
+</li>
+<li><p>功能说明：显示当前私聊/群的某个监听对象的推送设置</p>
+</li>
+</ul>
+<h4 id="设置推送属性-setGroupAttr"><a href="#设置推送属性-setGroupAttr" class="headerlink" title="设置推送属性 setGroupAttr"></a>设置推送属性 setGroupAttr</h4><ul>
+<li><p>命令格式：<code>setGroupAttr &lt;属性&gt; &lt;值&gt;</code></p>
+</li>
+<li><p>同义格式：<code>全局设置</code></p>
+</li>
+<li><p>所需权限：超级管理员/群管理/群主/好友私聊, @bot</p>
+</li>
+<li><p>功能说明：移除一个本群监听的用户</p>
+</li>
+</ul>
+<p>例：setGroupAttr 转推 关</p>
+<h5 id="支持的属性列表-大小写不敏感"><a href="#支持的属性列表-大小写不敏感" class="headerlink" title="支持的属性列表(大小写不敏感)"></a>支持的属性列表(大小写不敏感)</h5><p><strong>※ 属性名称，别名1，…，别名n</strong></p>
+<h6 id="携带图片发送"><a href="#携带图片发送" class="headerlink" title="携带图片发送"></a>携带图片发送</h6><blockquote>
+<p>upimg，图片，img</p>
+</blockquote>
+<h5 id="消息模版-参数为模版字符串"><a href="#消息模版-参数为模版字符串" class="headerlink" title="消息模版(参数为模版字符串)"></a>消息模版(参数为模版字符串)</h5><blockquote>
+<p>retweet_template,转推模版</p>
+<p>quoted_template,转推并评论模版</p>
+<p>reply_to_status_template,回复模版</p>
+<p>reply_to_user_template,被提及模版</p>
+<p>none_template,发推模版</p>
+</blockquote>
+<h5 id="推特转发各类型开关"><a href="#推特转发各类型开关" class="headerlink" title="推特转发各类型开关"></a>推特转发各类型开关</h5><ul>
+<li>属性</li>
+</ul>
+<blockquote>
+<p>retweet,转推</p>
+<p>quoted,转推并评论</p>
+<p>reply_to_status,回复</p>
+<p>reply_to_user,被提及</p>
+<p>none,发推</p>
+</blockquote>
+<ul>
+<li>值</li>
+</ul>
+<blockquote>
+<p>true,开,打开,开启,1</p>
+<p>false,关,关闭,0</p>
+</blockquote>
+<h5 id="推特个人信息变动推送开关"><a href="#推特个人信息变动推送开关" class="headerlink" title="推特个人信息变动推送开关"></a>推特个人信息变动推送开关</h5><h6 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h6><blockquote>
+<p>change_id,ID改变</p>
+<p>change_name,名称改变</p>
+<p>change_description,描述改变</p>
+<p>change_headimgchange,头像改变</p>
+</blockquote>
+<h6 id="支持的值"><a href="#支持的值" class="headerlink" title="支持的值"></a>支持的值</h6><blockquote>
+<p>true,开,打开,开启,1</p>
+<p>false,关,关闭,0</p>
+</blockquote>
+<h4 id="模版字符串说明"><a href="#模版字符串说明" class="headerlink" title="模版字符串说明"></a>模版字符串说明</h4><h5 id="默认模版"><a href="#默认模版" class="headerlink" title="默认模版"></a>默认模版</h5><h6 id="发推"><a href="#发推" class="headerlink" title="发推"></a>发推</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">推特ID：$tweet_id_min，【$tweet_nick】发布了：\n$tweet_text\n$media_img</span><br></pre></td></tr></table></figure>
+
+<h6 id="转推"><a href="#转推" class="headerlink" title="转推"></a>转推</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">推特ID：$tweet_id_min，【$tweet_nick】转了【$related_user_name】的推特：\n$tweet_text\n$media_img</span><br></pre></td></tr></table></figure>
+
+<h6 id="转发并评论"><a href="#转发并评论" class="headerlink" title="转发并评论"></a>转发并评论</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">推特ID：$tweet_id_min，【$tweet_nick】转发并评论了【$related_user_name】的推特：\n$tweet_text\n&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;\n$related_tweet_text\n$media_img</span><br></pre></td></tr></table></figure>
+
+<h6 id="回复与被提及"><a href="#回复与被提及" class="headerlink" title="回复与被提及"></a>回复与被提及</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">推特ID：$tweet_id_min，【$tweet_nick】回复了【$related_user_name】：\n$tweet_text\n$media_img</span><br></pre></td></tr></table></figure>
+
+<h6 id="模版支持的变量"><a href="#模版支持的变量" class="headerlink" title="模版支持的变量"></a>模版支持的变量</h6><p>​    注：使用<code>\n</code>替代换行符，理论上直接换行也可以但是十分不推荐</p>
+<blockquote>
+<p>$tweet_id 推特ID</p>
+<p>$tweet_id_min 压缩推特id</p>
+<p>$tweet_nick 操作人昵称</p>
+<p>$tweet_user_id 操作人ID</p>
+<p>$tweet_text 发送推特的完整内容</p>
+<p>$related_user_id 关联用户ID</p>
+<p>$related_user_name 关联用户昵称-昵称-昵称查询不到时为ID(被评论/被转发/被提及)</p>
+<p>$related_tweet_id 关联推特ID(被评论/被转发)</p>
+<p>$related_tweet_id_min 关联推特ID的压缩(被评论/被转发)</p>
+<p>$related_tweet_text 关联推特内容(被转发或被转发并评论时存在)</p>
+<p>$media_img 推特携带的图片</p>
+</blockquote>
+<h4 id="更改监听对象属性-setAttr"><a href="#更改监听对象属性-setAttr" class="headerlink" title="更改监听对象属性 setAttr"></a>更改监听对象属性 setAttr</h4><ul>
+<li><p>命令格式：<code>setAttr &lt;监听用户UID&gt; &lt;属性&gt; &lt;值&gt;</code></p>
+</li>
+<li><p>同义格式：<code>对象设置</code></p>
+</li>
+<li><p>所需权限：超级管理员/群管理/群主/好友私聊, @bot</p>
+</li>
+<li><p>功能说明：设置指定监听对象的属性</p>
+</li>
+</ul>
+<p>例：<code>setGroupAttr 997786053124616192 转推 关</code></p>
+<p>​        <code>setGroupAttr 997786053124616192 昵称</code></p>
+<p>​        <code>setGroupAttr 997786053124616192 昵称 FBKwaring</code></p>
+<p>※ UID可以通过命令<strong>getpushlist</strong>查看，大部分属性与<strong>setGroupAttr</strong>命令相同</p>
+<h5 id="特有的属性支持"><a href="#特有的属性支持" class="headerlink" title="特有的属性支持"></a>特有的属性支持</h5><p><strong>※ 属性名称，别名1，…，别名n</strong></p>
+<blockquote>
+<p>nick,昵称</p>
+<p>des,描述</p>
+</blockquote>
+<h4 id="删除推送对象-globalRemove"><a href="#删除推送对象-globalRemove" class="headerlink" title="删除推送对象 globalRemove"></a>删除推送对象 globalRemove</h4><ul>
+<li><p>命令格式：<code>globalRemove 消息类型 Q号/群号</code></p>
+</li>
+<li><p>同义格式：<code>全局移除</code></p>
+</li>
+<li><p>所需权限：超级管理员/好友私聊, @bot</p>
+</li>
+<li><p>功能说明：移除某个人或某个群的所有监听，用于修复配置错误(退出群/删除好友时不在线)</p>
+</li>
+</ul>
+<h5 id="消息类型"><a href="#消息类型" class="headerlink" title="消息类型"></a>消息类型</h5><blockquote>
+<p>私聊,好友,private</p>
+<p>群聊,群,group</p>
+</blockquote>
+<p>例：<code>globalRemove 群聊 123456</code></p>
+<h4 id="查询推特用户信息-getuserinfo"><a href="#查询推特用户信息-getuserinfo" class="headerlink" title="查询推特用户信息 getuserinfo"></a>查询推特用户信息 getuserinfo</h4><ul>
+<li><p>命令格式：<code>getuserinfo &lt;用户UID/用户ID&gt;</code></p>
+</li>
+<li><p>同义格式：<code>查询推特用户</code></p>
+</li>
+<li><p>所需权限：超级管理员/好友私聊, @bot</p>
+</li>
+<li><p>功能说明：查询某个用户的信息，显示的头像将会更新(新增与减少监听不会重新下载头像)</p>
+</li>
+</ul>
+<h4 id="全局移除-globalRemove"><a href="#全局移除-globalRemove" class="headerlink" title="全局移除 globalRemove"></a>全局移除 globalRemove</h4><ul>
+<li>命令格式：<code>globalRemove &lt;private/私聊/group/群聊&gt; &lt;QQ号/群号&gt;</code></li>
+<li>同义格式：<code>全局移除</code></li>
+<li>所需权限：超级管理员, @bot</li>
+<li>功能说明：移除某个人或某个群的所有监测，用于修复配置错误(退出群/删除好友时不在线)</li>
+</ul>
+<h4 id="压缩推特ID-entweetid"><a href="#压缩推特ID-entweetid" class="headerlink" title="压缩推特ID entweetid"></a>压缩推特ID <code>entweetid</code></h4><ul>
+<li><p>命令格式：<code>entweetid &lt;推文ID&gt;</code></p>
+</li>
+<li><p>同义格式：<code>推特ID压缩</code>、<code>压缩ID</code></p>
+</li>
+<li><p>所需权限：无限制</p>
+</li>
+<li><p>功能说明：将推文ID压缩为缩写推文ID</p>
+</li>
+</ul>
+<h4 id="解压推特ID-detweetid"><a href="#解压推特ID-detweetid" class="headerlink" title="解压推特ID detweetid"></a>解压推特ID <code>detweetid</code></h4><ul>
+<li><p>命令格式：<code>detweetid &lt;缩写推文ID&gt;</code></p>
+</li>
+<li><p>同义格式：<code>推特ID解压</code>、<code>解压ID</code></p>
+</li>
+<li><p>所需权限：无限制</p>
+</li>
+<li><p>功能说明：将缩写推文ID解压为推文ID</p>
+</li>
+</ul>
+<h3 id="推文翻译命令列表"><a href="#推文翻译命令列表" class="headerlink" title="推文翻译命令列表"></a>推文翻译命令列表</h3><h4 id="烤推授权-transswitch"><a href="#烤推授权-transswitch" class="headerlink" title="烤推授权 transswitch"></a>烤推授权 <code>transswitch</code></h4><ul>
+<li><p>命令格式：<code>globalRemove &lt;private/私聊/group/群聊&gt; &lt;QQ号/群号&gt;</code></p>
+</li>
+<li><p>同义格式：<code>ts</code>、<code>烤推授权</code></p>
+</li>
+<li><p>所需权限：群聊, 群主/超级管理员, @bot</p>
+</li>
+<li><p>功能说明：为群聊添加/移除烤推授权(开关功能)</p>
+</li>
+</ul>
+<h4 id="翻译推特-trans"><a href="#翻译推特-trans" class="headerlink" title="翻译推特 trans"></a>翻译推特 <code>trans</code></h4><ul>
+<li><p>命令格式：<code>trans &lt;推文ID/缩写推文ID&gt; &lt;翻译文本&gt;</code></p>
+</li>
+<li><p>同义格式：<code>t</code>、<code>烤推</code></p>
+</li>
+<li><p>所需权限：无限制</p>
+</li>
+<li><p>功能说明：为某条推文添加翻译，由BOT完成嵌字并返回。翻译文本支持多行，不支持转义字符(TODO: 对emoji的支持尚需完善)</p>
+</li>
+</ul>
+<h4 id="获取推特翻译列表-translist"><a href="#获取推特翻译列表-translist" class="headerlink" title="获取推特翻译列表 translist"></a>获取推特翻译列表 <code>translist</code></h4><ul>
+<li><p>命令格式：<code>translist &lt;页数&gt;</code>或 <code>translist</code>(translist默认值为1)</p>
+</li>
+<li><p>同义格式：<code>tl</code>、<code>烤推列表</code></p>
+</li>
+<li><p>所需权限：无限制</p>
+</li>
+<li><p>功能说明：获取已翻译推特列表</p>
+</li>
+</ul>
+<h4 id="获取翻译文本-gettrans"><a href="#获取翻译文本-gettrans" class="headerlink" title="获取翻译文本 gettrans"></a>获取翻译文本 <code>gettrans</code></h4><ul>
+<li><p>命令格式：<code>gettrans &lt;推文ID/缩写推文ID&gt;</code></p>
+</li>
+<li><p>同义格式：<code>gt</code>、<code>获取翻译</code></p>
+</li>
+<li><p>所需权限：无限制</p>
+</li>
+<li><p>功能说明：获取某条推文的翻译文本</p>
+</li>
+</ul>
+<h4 id="获取烤推帮助-transabout"><a href="#获取烤推帮助-transabout" class="headerlink" title="获取烤推帮助 transabout"></a>获取烤推帮助 <code>transabout</code></h4><ul>
+<li>命令格式：<code>transabout</code></li>
+<li>同义格式：<code>ta</code>、<code>烤推帮助</code></li>
+<li>所需权限：无限制</li>
+<li>功能说明：获取烤推流程相关命令帮助说明</li>
+</ul>
+<h4 id="按类型获取推文翻译-typeGettrans"><a href="#按类型获取推文翻译-typeGettrans" class="headerlink" title="按类型获取推文翻译 typeGettrans"></a><em>按类型获取推文翻译 <code>typeGettrans</code></em></h4><ul>
+<li>命令格式：<code>typeGettrans &lt;推文翻译类型&gt;</code></li>
+<li>同义格式：<code>tgt</code></li>
+<li>所需权限：超级管理员/开发者</li>
+<li>功能说明：仅供开发者使用的推文翻译获取方法</li>
+</ul>
+<h3 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a><em>权限管理</em></h3><p>该部分仅供超级管理员/开发者使用</p>
+<h4 id="获取合法权限组列表-legalGroupList"><a href="#获取合法权限组列表-legalGroupList" class="headerlink" title="获取合法权限组列表 legalGroupList"></a>获取合法权限组列表 <code>legalGroupList</code></h4><ul>
+<li>命令格式：<code>legalGroupList</code></li>
+<li>同义格式：<code>合法组权限列表</code></li>
+<li>所需权限：超级管理员/开发者</li>
+<li>功能说明：获取合法可授权模块(合法权限组列表)</li>
+</ul>
+<h4 id="获取合法权限列表-legalPermList"><a href="#获取合法权限列表-legalPermList" class="headerlink" title="获取合法权限列表 legalPermList"></a>获取合法权限列表 <code>legalPermList</code></h4><ul>
+<li>命令格式：<code>legalPermList &lt;合法权限组名&gt;</code></li>
+<li>同义格式：<code>合法权限列表</code></li>
+<li>所需权限：超级管理员/开发者</li>
+<li>功能说明：获取某合法权限组内具体可用命令(具体合法权限)</li>
+</ul>
+<h4 id="权限组列表-permGroupList"><a href="#权限组列表-permGroupList" class="headerlink" title="权限组列表 permGroupList"></a>权限组列表 <code>permGroupList</code></h4><ul>
+<li>命令格式：<code>permGroupList &lt;类型&gt; &lt;ID&gt;</code></li>
+<li>同义格式：<code>权限组列表</code></li>
+<li>所需权限：超级管理员/开发者</li>
+<li>功能说明：获取某群聊/聊天所有权限组列表</li>
+</ul>
+<h4 id="权限列表-permList"><a href="#权限列表-permList" class="headerlink" title="权限列表 permList"></a>权限列表 <code>permList</code></h4><ul>
+<li>命令格式：<code>permList &lt;权限组名&gt;</code></li>
+<li>同义格式：<code>tgt</code></li>
+<li>所需权限：超级管理员/开发者</li>
+<li>功能说明：获取某群聊/聊天权限组内权限列表</li>
+</ul>
+<h4 id="添加权限-permAdd"><a href="#添加权限-permAdd" class="headerlink" title="添加权限 permAdd"></a>添加权限 <code>permAdd</code></h4><ul>
+<li>命令格式：<code>permAdd &lt;群号&gt; &lt;权限组名&gt;</code></li>
+<li>同义格式：<code>添加权限</code></li>
+<li>所需权限：超级管理员/开发者</li>
+<li>功能说明：添加某群组/聊天权限</li>
+</ul>
+<h4 id="移除权限-permDel"><a href="#移除权限-permDel" class="headerlink" title="移除权限 permDel"></a>移除权限 <code>permDel</code></h4><ul>
+<li>命令格式：<code>permDel &lt;群号&gt; &lt;权限组名&gt;</code></li>
+<li>同义格式：<code>移除权限</code></li>
+<li>所需权限：超级管理员/开发者</li>
+<li>功能说明：移除某群组/聊天权限</li>
+</ul>
+<h3 id="翻译功能"><a href="#翻译功能" class="headerlink" title="翻译功能"></a>翻译功能</h3><h4 id="翻译功能设置-mtransopt"><a href="#翻译功能设置-mtransopt" class="headerlink" title="翻译功能设置 mtransopt"></a>翻译功能设置 <code>mtransopt</code></h4><ul>
+<li>命令格式：<code>mtransopt &lt;设置&gt;</code></li>
+<li>同义格式：<code>翻译设置</code></li>
+<li>所需权限：@bot</li>
+<li>功能说明：进行机器翻译功能设置</li>
+</ul>
+<h5 id="机翻功能说明"><a href="#机翻功能说明" class="headerlink" title="机翻功能说明"></a>机翻功能说明</h5><p>本BOT提供谷歌和腾讯两种翻译API：</p>
+<ul>
+<li>腾讯为自动识别语言 翻译为中文</li>
+<li>谷歌可指定源语言与目标语言</li>
+</ul>
+<h5 id="设置选项"><a href="#设置选项" class="headerlink" title="设置选项"></a>设置选项</h5><h6 id="谷歌翻译"><a href="#谷歌翻译" class="headerlink" title="谷歌翻译"></a>谷歌翻译</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;设置&gt; &#x3D; 谷歌 &lt;源语言&gt; &lt;目标语言&gt;</span><br></pre></td></tr></table></figure>
+
+<p>使用例：</p>
+<blockquote>
+<p>!翻译设置 谷歌 中 日</p>
+</blockquote>
+<p>即「使用谷歌API将中文翻译为日文」</p>
+<h6 id="腾讯翻译"><a href="#腾讯翻译" class="headerlink" title="腾讯翻译"></a>腾讯翻译</h6><p>自动识别默认使用腾讯API</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;设置&gt; &#x3D; 腾讯</span><br></pre></td></tr></table></figure>
+<p>即可</p>
+<h4 id="机器翻译-mtrans"><a href="#机器翻译-mtrans" class="headerlink" title="机器翻译 mtrans"></a>机器翻译 <code>mtrans</code></h4><ul>
+<li>命令格式：<code>mtrans &lt;文本内容&gt;</code></li>
+<li>同义格式：<code>机翻</code>、<code>翻译</code>、<code>mt</code></li>
+<li>所需权限：@bot</li>
+<li>功能说明：进行机器翻译</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://chenxuan353.github.io/tweetToBot/2020/06/08/command-docs/" data-id="ckdfon4zv00007ssycfj5hndo" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tweetToBot/tags/%E4%BD%BF%E7%94%A8/" rel="tag">使用</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tweetToBot/tags/%E5%8A%9F%E8%83%BD/" rel="tag">功能</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tweetToBot/tags/%E5%91%BD%E4%BB%A4/" rel="tag">命令</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tweetToBot/tags/%E6%96%87%E6%A1%A3/" rel="tag">文档</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-deploy-docs" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/tweetToBot/2020/06/08/deploy-docs/" class="article-date">
+  <time datetime="2020-06-08T02:16:57.000Z" itemprop="datePublished">2020-06-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/tweetToBot/categories/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/">项目文档</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/tweetToBot/2020/06/08/deploy-docs/">部署文档</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><h3 id="部署CoolQ"><a href="#部署CoolQ" class="headerlink" title="部署CoolQ"></a>部署CoolQ</h3><p>安装CoolQ并按照帖子内文档部署。</p>
+<p><a href="https://cqp.cc/t/23253" target="_blank" rel="noopener">Air</a> <a href="https://cqp.cc/t/14901" target="_blank" rel="noopener">Pro</a> <a href="https://cqp.cc/t/34558" target="_blank" rel="noopener">Docker</a></p>
+<ul>
+<li><p>Docker中部署Air</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir coolq-data</span><br><span class="line">docker run --name=coolq -d -p &lt;VNC Port&gt;:9000 -v /root/coolq-data:/home/user/coolq -e VNC_PASSWD=&lt;Password&gt; -e COOLQ_ACCOUNT=&lt;QQ&gt; coolq/wine-coolq</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<ul>
+<li><p>Docker中部署Pro</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir coolq</span><br><span class="line">docker run --name=coolq -d -p &lt;VNC Port&gt;:9000 -v `pwd`/coolq:/home/user/coolq -e COOLQ_ACCOUNT=&lt;QQ ID&gt; -e COOLQ_URL=http://dlsec.cqp.me/cqp-full -e VNC_PASSWD=&lt;Password&gt; coolq/wine-coolq</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>※ 其中9000为默认内部端口 映射到指定的VNC端口 故在后面操作图形化界面时 需通过</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HOST IP:VNC Port</span><br></pre></td></tr></table></figure>
+
+<p>的地址打开。</p>
+<p>*<em>如需使用除搬运推文以外的其他功能(烤推等涉及图片发送的功能) *</em></p>
+<p><strong>请务必<a href="https://cqp.me/user/" target="_blank" rel="noopener">捐赠CQP项目</a>以使用<a href="https://cqp.cc/t/14901" target="_blank" rel="noopener">CoolQ Pro</a></strong></p>
+<h3 id="启动插件"><a href="#启动插件" class="headerlink" title="启动插件"></a>启动插件</h3><h4 id="下载CPK依赖"><a href="#下载CPK依赖" class="headerlink" title="下载CPK依赖"></a>下载CPK依赖</h4><ul>
+<li>Windows平台</li>
+</ul>
+<p>下载<a href="https://github.com/richardchien/coolq-http-api/releases" target="_blank" rel="noopener">CQHttp</a>的<a href="https://github.com/richardchien/coolq-http-api/releases/download/v4.15.0/io.github.richardchien.coolqhttpapi.cpk" target="_blank" rel="noopener">CPK依赖包</a>并安装(放到依赖包位置并<strong>初次启动后进行配置</strong>)</p>
+<ul>
+<li>Docker for Linux</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/richardchien/coolq-http-api/releases/download/v4.15.0/io.github.richardchien.coolqhttpapi.cpk</span><br></pre></td></tr></table></figure>
+
+<p><em>如在Docker中部署请在此处启动插件服务</em></p>
+<h4 id="配置CPK插件"><a href="#配置CPK插件" class="headerlink" title="配置CPK插件"></a>配置CPK插件</h4><p>在CQ根目录下<code>data/app/io.github.richardchien.coolqhttpapi/config/</code>文件夹内，找到<code>&lt;QQ号&gt;.json</code>的JSON配置文件（须初次启动后自动生成）</p>
+<p><strong>在其中添加两行以打开消息推送</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">"rate_limit_interval":500,</span><br><span class="line">"enable_rate_limited_actions": true,</span><br></pre></td></tr></table></figure>
+
+<p>本插件支持HTTP和WS两种模式，故可根据官方文档中<a href="https://cqhttp.cc/docs/4.15/#/Configuration" target="_blank" rel="noopener">配置</a>部分进行操作。</p>
+<p>绝大部分参数无需修改，但请保证打开http/ws_reverse/ws其中之一，并打开heartbeat以确保全部功能可用。基本操作也可参见Nonebot文档中的<a href="https://nonebot.cqp.moe/guide/getting-started.html#%E9%85%8D%E7%BD%AE-cqhttp-%E6%8F%92%E4%BB%B6" target="_blank" rel="noopener">基本配置说明</a></p>
+<p>下面给出一个配置范例</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"$schema"</span>: <span class="string">"https://cqhttp.cc/config-schema.json"</span>,</span><br><span class="line">    <span class="attr">"host"</span>: <span class="string">"0.0.0.0"</span>,</span><br><span class="line">    <span class="attr">"port"</span>: <span class="number">5700</span>,</span><br><span class="line">    <span class="attr">"use_http"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"ws_host"</span>: <span class="string">"0.0.0.0"</span>,</span><br><span class="line">    <span class="attr">"ws_port"</span>: <span class="number">6700</span>,</span><br><span class="line">    <span class="attr">"use_ws"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"ws_reverse_url"</span>: <span class="string">"ws://127.0.0.1:8087/ws/"</span>,</span><br><span class="line">    <span class="attr">"ws_reverse_api_url"</span>: <span class="string">""</span>,</span><br><span class="line">    <span class="attr">"ws_reverse_event_url"</span>: <span class="string">""</span>,</span><br><span class="line">    <span class="attr">"ws_reverse_reconnect_interval"</span>: <span class="number">3000</span>,</span><br><span class="line">    <span class="attr">"ws_reverse_reconnect_on_code_1000"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"use_ws_reverse"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"post_url"</span>: <span class="string">"http://0.0.0.0:8890"</span>,</span><br><span class="line">    <span class="attr">"access_token"</span>: <span class="string">""</span>,</span><br><span class="line">    <span class="attr">"rate_limit_interval"</span>:<span class="number">500</span>,</span><br><span class="line">    <span class="attr">"enable_rate_limited_actions"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"enable_heartbeat"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"secret"</span>: <span class="string">""</span>,</span><br><span class="line">    <span class="attr">"post_message_format"</span>: <span class="string">"string"</span>,</span><br><span class="line">    <span class="attr">"serve_data_files"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"update_source"</span>: <span class="string">"global"</span>,</span><br><span class="line">    <span class="attr">"update_channel"</span>: <span class="string">"stable"</span>,</span><br><span class="line">    <span class="attr">"auto_check_update"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"auto_perform_update"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"show_log_console"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"log_level"</span>: <span class="string">"info"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id=""><a href="#" class="headerlink" title=""></a></h5><table>
+<thead>
+<tr>
+<th>配置文件</th>
+<th>注释说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>“$schema”: “<a href="https://cqhttp.cc/config-schema.json&quot;" target="_blank" rel="noopener">https://cqhttp.cc/config-schema.json&quot;</a></td>
+<td></td>
+</tr>
+<tr>
+<td>“host”: “0.0.0.0”</td>
+<td>HTTP协议 事件上报IP（监听IP）<strong>开启时须正确配置</strong></td>
+</tr>
+<tr>
+<td>“port”: 5700</td>
+<td>HTTP协议 事件上报接口（监听接口）<strong>开启时须正确配置</strong></td>
+</tr>
+<tr>
+<td>“use_http”: true</td>
+<td>启用HTTP <strong>使用时开启</strong></td>
+</tr>
+<tr>
+<td>“ws_host”: “0.0.0.0”</td>
+<td>正向WS IP</td>
+</tr>
+<tr>
+<td>“ws_port”: 6700</td>
+<td>正向WS端口</td>
+</tr>
+<tr>
+<td>“use_ws”: false</td>
+<td>启用正向WS <strong>本项目不使用 建议关闭</strong></td>
+</tr>
+<tr>
+<td>“ws_reverse_url”: “ws://127.0.0.1:8087/ws/“</td>
+<td>反向WS地址 <strong>务必正确填写</strong></td>
+</tr>
+<tr>
+<td>“ws_reverse_api_url”: “”</td>
+<td>反向WS API地址 <strong>如填写反向WS地址则无需填写</strong></td>
+</tr>
+<tr>
+<td>“ws_reverse_event_url”: “”</td>
+<td>反向WS 事件上报地址 <strong>如填写反向WS地址则无需填写</strong></td>
+</tr>
+<tr>
+<td>“ws_reverse_reconnect_interval”: 3000</td>
+<td>重连间隔 <strong>无需修改</strong></td>
+</tr>
+<tr>
+<td>“ws_reverse_reconnect_on_code_1000”: true</td>
+<td>是否重连 <strong>无需修改</strong></td>
+</tr>
+<tr>
+<td>“use_ws_reverse”: true</td>
+<td>启用反向WS <strong>使用时开启 建议优先使用</strong></td>
+</tr>
+<tr>
+<td>“post_url”: “<a href="http://0.0.0.0:8890&quot;">http://0.0.0.0:8890&quot;</a></td>
+<td>HTTP POST地址 <strong>使用HTTP协议填写</strong></td>
+</tr>
+<tr>
+<td>“access_token”: “”</td>
+<td>CQHTTP TOKEN <strong>无需填写</strong></td>
+</tr>
+<tr>
+<td>“rate_limit_interval”:500</td>
+<td>频率限制 <strong>务必添加</strong></td>
+</tr>
+<tr>
+<td>“enable_rate_limited_actions”: true</td>
+<td>开启频率限制 <strong>务必打开</strong></td>
+</tr>
+<tr>
+<td>“enable_heartbeat”: true</td>
+<td>开启心跳 <strong>务必打开</strong></td>
+</tr>
+<tr>
+<td>“secret”: “”,<br/>“post_message_format”: “string”,<br/>“serve_data_files”: false,<br/>“update_source”: “global”,<br/>“update_channel”: “stable”,<br/>“auto_check_update”: false,<br/>“auto_perform_update”: false,<br/>“show_log_console”: true,<br/>“log_level”: “info”</td>
+<td>各项均可保持默认 <strong>无需修改</strong></td>
+</tr>
+</tbody></table>
+<h5 id="关于协议"><a href="#关于协议" class="headerlink" title="关于协议"></a>关于协议</h5><p>本项目支持使用HTTP或反向WS协议进行通信，其中</p>
+<ul>
+<li>使用HTTP协议<ul>
+<li>事件上报地址 “host”与”port”</li>
+<li>POST通信地址 “post_url”(host:port)</li>
+</ul>
+</li>
+<li>使用反向WS协议<ul>
+<li>API地址 “ws_reverse_url”</li>
+</ul>
+</li>
+</ul>
+<p>简单来说，HTTP的收发分别使用两个地址，而反向WS协议使用同一个地址。</p>
+<p>因此可以通过同时打开HTTP和反向WS协议实现使用一个BOT同时连接两个后端服务。</p>
+<p><strong>具体配置过程在<a href="https://github.com/chenxuan353/tweetToQQbot/blob/master/readme.md#多服务配置" target="_blank" rel="noopener">多服务配置</a>中说明。</strong></p>
+<h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><h4 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h4><h5 id="PYPI依赖"><a href="#PYPI依赖" class="headerlink" title="PYPI依赖"></a>PYPI依赖</h5><p>手动安装依赖</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install nonebot[scheduler] selenium xmltodict threading urllib tweepy</span><br></pre></td></tr></table></figure>
+
+<p>或者可以使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip -r requirement.txt</span><br></pre></td></tr></table></figure>
+
+<p>进行一键安装</p>
+<p><strong>如进行一键依赖安装时发送报错 请检查Python版本是否为3.7</strong></p>
+<h5 id="Chrome浏览器与ChromeDriver"><a href="#Chrome浏览器与ChromeDriver" class="headerlink" title="Chrome浏览器与ChromeDriver"></a>Chrome浏览器与ChromeDriver</h5><p>您可以参考<a href="https://blog.csdn.net/Fiverya/article/details/98869750" target="_blank" rel="noopener">本教程</a></p>
+<h4 id="添加配置"><a href="#添加配置" class="headerlink" title="添加配置"></a>添加配置</h4><p>将config_example.py改名为config.py并填写内部的配置信息</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv config_example.py config.py</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi config.py</span><br></pre></td></tr></table></figure>
+<p><strong>内部各项均已注明 请根据注释进行配置（不填请保留字段 不推荐删除）</strong></p>
+<h5 id="多服务配置"><a href="#多服务配置" class="headerlink" title="多服务配置"></a>多服务配置</h5><p>CQHTTP为nonebot提供了HTTP和反向WS两种通信协议 具体配置方法如下</p>
+<blockquote>
+<p>为方便书写与描述</p>
+<p>称呼<code>data/app/io.github.richardchien.coolqhttpapi/config/</code>文件夹内含有QQ号的JSON文件为<strong>插件配置</strong></p>
+<p>称呼本项目中<code>config.py</code>文件为<strong>项目配置</strong></p>
+</blockquote>
+<h6 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h6><ul>
+<li><p>事件上报地址</p>
+<p>编辑插件配置中<code>host</code>与<code>port</code>字段</p>
+<p>并与项目配置中<code>API_ROOT</code>字段保持一致</p>
+</li>
+<li><p>POST通信地址</p>
+<p>编辑插件配置中<code>post_url</code>字段 <strong>※ 须添加<code>http://</code>作为前缀</strong></p>
+<p>并与项目配置中<code>NONEBOT_HOST</code>和<code>NONEBOT_PORT</code>所指向地址保持一致</p>
+</li>
+</ul>
+<h6 id="反向WS协议"><a href="#反向WS协议" class="headerlink" title="反向WS协议"></a>反向WS协议</h6><ul>
+<li><p>API地址</p>
+<p>编辑插件配置中<code>ws_reverse_url</code>字段（只修改IP和端口即可）</p>
+<p>并与项目配置中<code>NONEBOT_HOST</code>和<code>NONEBOT_PORT</code>所指向地址保持一致</p>
+<p>（API_ROOT与反向WS无关 如<strong>在使用反向WS后端</strong> <strong>必须</strong>注释掉本变量）</p>
+</li>
+</ul>
+<h4 id="启动项目"><a href="#启动项目" class="headerlink" title="启动项目"></a>启动项目</h4><p>然后就可以用start.py启动项目了</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python start.py</span><br></pre></td></tr></table></figure>
+
+<h4 id="启动插件-1"><a href="#启动插件-1" class="headerlink" title="启动插件"></a>启动插件</h4><p>在Docker指定的端口通过HTTP访问服务器，在浏览器中键入：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">服务器IP:指定端口</span><br></pre></td></tr></table></figure>
+
+<p>访问NoVNC控制台。</p>
+<p>输入密码后可进入Docker内置的Wine环境，通过可视化方式操作CoolQ客户端，</p>
+<p>请登录后在插件管理中打开CQHTTP插件(请确保配置环节中CQHTTP已正确安装)。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://chenxuan353.github.io/tweetToBot/2020/06/08/deploy-docs/" data-id="ckdfon4zz00017ssyfgx5airs" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tweetToBot/tags/%E4%BD%BF%E7%94%A8/" rel="tag">使用</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tweetToBot/tags/%E6%96%87%E6%A1%A3/" rel="tag">文档</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tweetToBot/tags/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" rel="tag">注意事项</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tweetToBot/tags/%E9%83%A8%E7%BD%B2/" rel="tag">部署</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-develop-status" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/tweetToBot/2020/06/08/develop-status/" class="article-date">
+  <time datetime="2020-06-08T02:15:57.000Z" itemprop="datePublished">2020-06-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/tweetToBot/categories/%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8B/">项目简介</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/tweetToBot/2020/06/08/develop-status/">开发情况</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="开发情况"><a href="#开发情况" class="headerlink" title="开发情况"></a>开发情况</h2><p>目前测试中：烤推/转推功能</p>
+<p>目前开发中：一键部署功能 动态获取功能</p>
+<h2 id="项目进度及注意事项"><a href="#项目进度及注意事项" class="headerlink" title="项目进度及注意事项"></a>项目进度及注意事项</h2><p>支持多个bot远程连接此后端，已经对可能的冲突进行了处理。</p>
+<p>目前推特的推送流异常后将尝试5次重启(重启前等待十秒)，五次重启均失败时需要手动重启。</p>
+<p>对监听的修改将立刻保存至文件中。</p>
+<p>已经保证了每个群就算是多个BOT同时存在也只会添加一个相同监听对象的推送。</p>
+<p>现在配置文件读取后会以JSON的形式输出到日志中，如果丢失了配置文件，可以凭日志回档。</p>
+<p>并且在退群时会自动卸载监听(需要bot在线)，配置异常时可以手动清除检测。</p>
+<h2 id="注记"><a href="#注记" class="headerlink" title="注记"></a>注记</h2><p>※ 接收推送的接口已经二次封装，只要事件符合推送事件处理器的数据格式，就可以正常推送。</p>
+<p>※ 为了保证推送的正常运行使用了多线程。</p>
+<p>※ 安装思源黑体CN之后可以修复字体问题。</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>※ 部分周边功能开发见<a href="https://github.com/Cyame/OkayuTweetBot" target="_blank" rel="noopener">分仓库</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://chenxuan353.github.io/tweetToBot/2020/06/08/develop-status/" data-id="ckdfon50h000k7ssy6f8o4vxd" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tweetToBot/tags/%E5%BC%80%E5%8F%91/" rel="tag">开发</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tweetToBot/tags/%E6%83%85%E5%86%B5/" rel="tag">情况</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tweetToBot/tags/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" rel="tag">注意事项</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tweetToBot/tags/%E7%AE%80%E4%BB%8B/" rel="tag">简介</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-introduction" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/tweetToBot/2020/06/08/introduction/" class="article-date">
+  <time datetime="2020-06-08T02:13:30.000Z" itemprop="datePublished">2020-06-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/tweetToBot/categories/%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8B/">项目简介</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/tweetToBot/2020/06/08/introduction/">项目概述</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>目前仍然处于测试状态，功能大部分已经完善，可以对BOT深度定制化。</p>
+<h2 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h2><p><a href="LICENSE"><img src="https://img.shields.io/github/license/richardchien/nonebot.svg" alt="License"></a><br><img src="https://img.shields.io/badge/python-3.7+-blue.svg" alt="Python Version"><br><img src="https://img.shields.io/badge/cqhttp-4.8+-black.svg" alt="CQHTTP Version"></p>
+<p>本仓库主要依赖于模块<a href="https://github.com/nonebot/nonebot" target="_blank" rel="noopener">nonebot</a>和<a href="https://github.com/tweepy/tweepy" target="_blank" rel="noopener">tweepy</a>，与CoolQ的通信依赖于CQHTTP；</p>
+<p>特别鸣谢<a href="https://github.com/richardchien" target="_blank" rel="noopener">richardchien</a>对上述封装项目的贡献。</p>
+<p><strong>本项目目前仅支持 Python 3.7 及 CQHTTP 插件 v4.8+</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://chenxuan353.github.io/tweetToBot/2020/06/08/introduction/" data-id="ckdfon50l000q7ssy26gaeipq" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tweetToBot/tags/%E6%83%85%E5%86%B5/" rel="tag">情况</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tweetToBot/tags/%E6%A6%82%E8%BF%B0/" rel="tag">概述</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tweetToBot/tags/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" rel="tag">注意事项</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tweetToBot/tags/%E7%AE%80%E4%BB%8B/" rel="tag">简介</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/tweetToBot/2020/06/08/test/" class="article-date">
+  <time datetime="2020-06-08T01:50:24.000Z" itemprop="datePublished">2020-06-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/tweetToBot/2020/06/08/test/">test</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Write"><a href="#Write" class="headerlink" title="Write"></a>Write</h2><p>Something!</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://chenxuan353.github.io/tweetToBot/2020/06/08/test/" data-id="ckdfon50j000m7ssyflwq2y0t" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/tweetToBot/categories/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/">项目文档</a></li><li class="category-list-item"><a class="category-list-link" href="/tweetToBot/categories/%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8B/">项目简介</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E4%BD%BF%E7%94%A8/" rel="tag">使用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E5%8A%9F%E8%83%BD/" rel="tag">功能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E5%91%BD%E4%BB%A4/" rel="tag">命令</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E5%BC%80%E5%8F%91/" rel="tag">开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E6%83%85%E5%86%B5/" rel="tag">情况</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E6%96%87%E6%A1%A3/" rel="tag">文档</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E6%A6%82%E8%BF%B0/" rel="tag">概述</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" rel="tag">注意事项</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E7%AE%80%E4%BB%8B/" rel="tag">简介</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E9%83%A8%E7%BD%B2/" rel="tag">部署</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tweetToBot/tags/%E4%BD%BF%E7%94%A8/" style="font-size: 15px;">使用</a> <a href="/tweetToBot/tags/%E5%8A%9F%E8%83%BD/" style="font-size: 10px;">功能</a> <a href="/tweetToBot/tags/%E5%91%BD%E4%BB%A4/" style="font-size: 10px;">命令</a> <a href="/tweetToBot/tags/%E5%BC%80%E5%8F%91/" style="font-size: 10px;">开发</a> <a href="/tweetToBot/tags/%E6%83%85%E5%86%B5/" style="font-size: 15px;">情况</a> <a href="/tweetToBot/tags/%E6%96%87%E6%A1%A3/" style="font-size: 15px;">文档</a> <a href="/tweetToBot/tags/%E6%A6%82%E8%BF%B0/" style="font-size: 10px;">概述</a> <a href="/tweetToBot/tags/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" style="font-size: 20px;">注意事项</a> <a href="/tweetToBot/tags/%E7%AE%80%E4%BB%8B/" style="font-size: 15px;">简介</a> <a href="/tweetToBot/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">部署</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/tweetToBot/archives/2020/06/">June 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/tweetToBot/2020/06/08/command-docs/">命令使用文档</a>
+          </li>
+        
+          <li>
+            <a href="/tweetToBot/2020/06/08/deploy-docs/">部署文档</a>
+          </li>
+        
+          <li>
+            <a href="/tweetToBot/2020/06/08/develop-status/">开发情况</a>
+          </li>
+        
+          <li>
+            <a href="/tweetToBot/2020/06/08/introduction/">项目概述</a>
+          </li>
+        
+          <li>
+            <a href="/tweetToBot/2020/06/08/test/">test</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 ChenXuan &amp; Cyame<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/tweetToBot/" class="mobile-nav-link">Home</a>
+  
+    <a href="/tweetToBot/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/tweetToBot/fancybox/jquery.fancybox.css">
+
+  
+<script src="/tweetToBot/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/tweetToBot/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

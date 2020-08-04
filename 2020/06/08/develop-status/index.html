@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>开发情况 | 基于CoolQ的推特BOT服务 用户文档</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="开发情况目前测试中：烤推&#x2F;转推功能 目前开发中：一键部署功能 动态获取功能 项目进度及注意事项支持多个bot远程连接此后端，已经对可能的冲突进行了处理。 目前推特的推送流异常后将尝试5次重启(重启前等待十秒)，五次重启均失败时需要手动重启。 对监听的修改将立刻保存至文件中。 已经保证了每个群就算是多个BOT同时存在也只会添加一个相同监听对象的推送。 现在配置文件读取后会以JSON的形式输出到日志中">
+<meta property="og:type" content="article">
+<meta property="og:title" content="开发情况">
+<meta property="og:url" content="https://chenxuan353.github.io/tweetToBot/2020/06/08/develop-status/index.html">
+<meta property="og:site_name" content="基于CoolQ的推特BOT服务 用户文档">
+<meta property="og:description" content="开发情况目前测试中：烤推&#x2F;转推功能 目前开发中：一键部署功能 动态获取功能 项目进度及注意事项支持多个bot远程连接此后端，已经对可能的冲突进行了处理。 目前推特的推送流异常后将尝试5次重启(重启前等待十秒)，五次重启均失败时需要手动重启。 对监听的修改将立刻保存至文件中。 已经保证了每个群就算是多个BOT同时存在也只会添加一个相同监听对象的推送。 现在配置文件读取后会以JSON的形式输出到日志中">
+<meta property="article:published_time" content="2020-06-08T02:15:57.000Z">
+<meta property="article:modified_time" content="2020-08-04T08:27:26.002Z">
+<meta property="article:author" content="ChenXuan &amp; Cyame">
+<meta property="article:tag" content="注意事项">
+<meta property="article:tag" content="简介">
+<meta property="article:tag" content="情况">
+<meta property="article:tag" content="开发">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/tweetToBot/atom.xml" title="基于CoolQ的推特BOT服务 用户文档" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/tweetToBot/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/tweetToBot/" id="logo">基于CoolQ的推特BOT服务 用户文档</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/tweetToBot/" id="subtitle">tweetToQQbot, an automatic bot service.</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/tweetToBot/">Home</a>
+        
+          <a class="main-nav-link" href="/tweetToBot/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/tweetToBot/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://chenxuan353.github.io/tweetToBot"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-develop-status" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/tweetToBot/2020/06/08/develop-status/" class="article-date">
+  <time datetime="2020-06-08T02:15:57.000Z" itemprop="datePublished">2020-06-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/tweetToBot/categories/%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8B/">项目简介</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      开发情况
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="开发情况"><a href="#开发情况" class="headerlink" title="开发情况"></a>开发情况</h2><p>目前测试中：烤推/转推功能</p>
+<p>目前开发中：一键部署功能 动态获取功能</p>
+<h2 id="项目进度及注意事项"><a href="#项目进度及注意事项" class="headerlink" title="项目进度及注意事项"></a>项目进度及注意事项</h2><p>支持多个bot远程连接此后端，已经对可能的冲突进行了处理。</p>
+<p>目前推特的推送流异常后将尝试5次重启(重启前等待十秒)，五次重启均失败时需要手动重启。</p>
+<p>对监听的修改将立刻保存至文件中。</p>
+<p>已经保证了每个群就算是多个BOT同时存在也只会添加一个相同监听对象的推送。</p>
+<p>现在配置文件读取后会以JSON的形式输出到日志中，如果丢失了配置文件，可以凭日志回档。</p>
+<p>并且在退群时会自动卸载监听(需要bot在线)，配置异常时可以手动清除检测。</p>
+<h2 id="注记"><a href="#注记" class="headerlink" title="注记"></a>注记</h2><p>※ 接收推送的接口已经二次封装，只要事件符合推送事件处理器的数据格式，就可以正常推送。</p>
+<p>※ 为了保证推送的正常运行使用了多线程。</p>
+<p>※ 安装思源黑体CN之后可以修复字体问题。</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>※ 部分周边功能开发见<a href="https://github.com/Cyame/OkayuTweetBot" target="_blank" rel="noopener">分仓库</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://chenxuan353.github.io/tweetToBot/2020/06/08/develop-status/" data-id="ckdfon50h000k7ssy6f8o4vxd" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tweetToBot/tags/%E5%BC%80%E5%8F%91/" rel="tag">开发</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tweetToBot/tags/%E6%83%85%E5%86%B5/" rel="tag">情况</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tweetToBot/tags/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" rel="tag">注意事项</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tweetToBot/tags/%E7%AE%80%E4%BB%8B/" rel="tag">简介</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/tweetToBot/2020/06/08/deploy-docs/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          部署文档
+        
+      </div>
+    </a>
+  
+  
+    <a href="/tweetToBot/2020/06/08/introduction/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">项目概述</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/tweetToBot/categories/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/">项目文档</a></li><li class="category-list-item"><a class="category-list-link" href="/tweetToBot/categories/%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8B/">项目简介</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E4%BD%BF%E7%94%A8/" rel="tag">使用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E5%8A%9F%E8%83%BD/" rel="tag">功能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E5%91%BD%E4%BB%A4/" rel="tag">命令</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E5%BC%80%E5%8F%91/" rel="tag">开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E6%83%85%E5%86%B5/" rel="tag">情况</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E6%96%87%E6%A1%A3/" rel="tag">文档</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E6%A6%82%E8%BF%B0/" rel="tag">概述</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" rel="tag">注意事项</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E7%AE%80%E4%BB%8B/" rel="tag">简介</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E9%83%A8%E7%BD%B2/" rel="tag">部署</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tweetToBot/tags/%E4%BD%BF%E7%94%A8/" style="font-size: 15px;">使用</a> <a href="/tweetToBot/tags/%E5%8A%9F%E8%83%BD/" style="font-size: 10px;">功能</a> <a href="/tweetToBot/tags/%E5%91%BD%E4%BB%A4/" style="font-size: 10px;">命令</a> <a href="/tweetToBot/tags/%E5%BC%80%E5%8F%91/" style="font-size: 10px;">开发</a> <a href="/tweetToBot/tags/%E6%83%85%E5%86%B5/" style="font-size: 15px;">情况</a> <a href="/tweetToBot/tags/%E6%96%87%E6%A1%A3/" style="font-size: 15px;">文档</a> <a href="/tweetToBot/tags/%E6%A6%82%E8%BF%B0/" style="font-size: 10px;">概述</a> <a href="/tweetToBot/tags/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" style="font-size: 20px;">注意事项</a> <a href="/tweetToBot/tags/%E7%AE%80%E4%BB%8B/" style="font-size: 15px;">简介</a> <a href="/tweetToBot/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">部署</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/tweetToBot/archives/2020/06/">June 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/tweetToBot/2020/06/08/command-docs/">命令使用文档</a>
+          </li>
+        
+          <li>
+            <a href="/tweetToBot/2020/06/08/deploy-docs/">部署文档</a>
+          </li>
+        
+          <li>
+            <a href="/tweetToBot/2020/06/08/develop-status/">开发情况</a>
+          </li>
+        
+          <li>
+            <a href="/tweetToBot/2020/06/08/introduction/">项目概述</a>
+          </li>
+        
+          <li>
+            <a href="/tweetToBot/2020/06/08/test/">test</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 ChenXuan &amp; Cyame<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/tweetToBot/" class="mobile-nav-link">Home</a>
+  
+    <a href="/tweetToBot/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/tweetToBot/fancybox/jquery.fancybox.css">
+
+  
+<script src="/tweetToBot/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/tweetToBot/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

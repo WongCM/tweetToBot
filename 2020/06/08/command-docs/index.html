@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>命令使用文档 | 基于CoolQ的推特BOT服务 用户文档</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="本BOT推送命令使用说明 调用命令实现功能需要以&lt;命令标识符&gt;&lt;命令&gt; &lt;参数表&gt;的形式调用，具体格式已在各命令中说明。  默认标识符为!或！，故在调用时请添加命令标识符，例如使用帮助命令时，请在聊天室(群&#x2F;私聊)中键入： 1!about  而非仅发送about。  关于权限，部分命令由于涉及重要推送设置或推送大量信息。为了保护BOT正常运行以及群内使用体验，故">
+<meta property="og:type" content="article">
+<meta property="og:title" content="命令使用文档">
+<meta property="og:url" content="https://chenxuan353.github.io/tweetToBot/2020/06/08/command-docs/index.html">
+<meta property="og:site_name" content="基于CoolQ的推特BOT服务 用户文档">
+<meta property="og:description" content="本BOT推送命令使用说明 调用命令实现功能需要以&lt;命令标识符&gt;&lt;命令&gt; &lt;参数表&gt;的形式调用，具体格式已在各命令中说明。  默认标识符为!或！，故在调用时请添加命令标识符，例如使用帮助命令时，请在聊天室(群&#x2F;私聊)中键入： 1!about  而非仅发送about。  关于权限，部分命令由于涉及重要推送设置或推送大量信息。为了保护BOT正常运行以及群内使用体验，故">
+<meta property="og:image" content="https://raw.githubusercontent.com/chenxuan353/tweetToQQbot/master/readme/image-20200428114040218.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/chenxuan353/tweetToQQbot/master/readme/image-20200428113938381.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/chenxuan353/tweetToQQbot/master/readme/image-20200428113806819.png">
+<meta property="article:published_time" content="2020-06-08T02:17:51.000Z">
+<meta property="article:modified_time" content="2020-08-04T08:27:26.002Z">
+<meta property="article:author" content="ChenXuan &amp; Cyame">
+<meta property="article:tag" content="功能">
+<meta property="article:tag" content="使用">
+<meta property="article:tag" content="文档">
+<meta property="article:tag" content="命令">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/chenxuan353/tweetToQQbot/master/readme/image-20200428114040218.png">
+  
+    <link rel="alternate" href="/tweetToBot/atom.xml" title="基于CoolQ的推特BOT服务 用户文档" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/tweetToBot/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/tweetToBot/" id="logo">基于CoolQ的推特BOT服务 用户文档</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/tweetToBot/" id="subtitle">tweetToQQbot, an automatic bot service.</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/tweetToBot/">Home</a>
+        
+          <a class="main-nav-link" href="/tweetToBot/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/tweetToBot/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://chenxuan353.github.io/tweetToBot"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-command-docs" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/tweetToBot/2020/06/08/command-docs/" class="article-date">
+  <time datetime="2020-06-08T02:17:51.000Z" itemprop="datePublished">2020-06-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      命令使用文档
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="本BOT推送命令使用说明"><a href="#本BOT推送命令使用说明" class="headerlink" title="本BOT推送命令使用说明"></a>本BOT推送命令使用说明</h2><ol>
+<li><p><strong>调用命令</strong>实现功能需要以<code>&lt;命令标识符&gt;&lt;命令&gt; &lt;参数表&gt;</code>的形式调用，具体格式已在各命令中说明。</p>
+<ul>
+<li><p>默认标识符为<code>!</code>或<code>！</code>，故在调用时请添加命令标识符，例如使用帮助命令时，请在聊天室(群/私聊)中键入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!about</span><br></pre></td></tr></table></figure>
+
+<p>而非仅发送<code>about</code>。</p>
+</li>
+<li><p>关于权限，部分命令由于涉及重要推送设置或推送大量信息。为了保护BOT正常运行以及群内使用体验，故操作需要管理权限(超级管理员/群主/管理员)进行操作才会进行响应。</p>
+</li>
+<li><p>在权限中有<code>@bot</code>字段的，群聊消息需要在添加标识符的同时@所使用的的BOT账号，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;@BOT&gt; !getuserinfo shirakamifubuki</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>命令和参数表，以及参数表各参数之间需要以<strong>一个半角空格</strong>作为空格，<strong>空参数亦不能省略空格</strong>。</p>
+<ul>
+<li>同义格式可以替换<code>&lt;命令&gt;</code>使用，功能完全相同(通常提供中文支持或缩写)</li>
+</ul>
+</li>
+<li><p>参数注释</p>
+<ul>
+<li><p>推文推送命令列表中提到的<code>&lt;推特用户ID&gt;</code>是指由英文数字组成的用户名（即在@时会显示的文本）。</p>
+</li>
+<li><p>烤推命令列表中提到的<code>&lt;推文ID&gt;</code>为推文<code>status</code>字段后19位(或以上)10进制数码，<code>&lt;压缩推文ID&gt;</code>为推文推送时附带的字符串，可使用相关命令互相转换。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>!注意!：如果监听列表里没有监听对象则全局设置会被重置。</strong></p>
+</li>
+</ol>
+<h2 id="命令列表"><a href="#命令列表" class="headerlink" title="命令列表"></a>命令列表</h2><h3 id="BOT相关命令"><a href="#BOT相关命令" class="headerlink" title="BOT相关命令"></a>BOT相关命令</h3><h4 id="帮助-about"><a href="#帮助-about" class="headerlink" title="帮助 about"></a>帮助 <code>about</code></h4><ul>
+<li>命令格式：<code>about</code></li>
+<li>同义格式：<code>帮助</code>、<code>关于</code>、<code>help</code></li>
+<li>所需权限：无限制</li>
+<li>功能说明：返回转推bot的关于消息</li>
+</ul>
+<h4 id="信息反馈-feedback"><a href="#信息反馈-feedback" class="headerlink" title="信息反馈 feedback"></a>信息反馈 <code>feedback</code></h4><ul>
+<li>命令格式：<code>feedback &lt;信息&gt;</code></li>
+<li>同义格式：<code>Feedback</code>、<code>反馈</code></li>
+<li>所需权限：超级管理员/群管理/群主</li>
+<li>功能说明：所发送的信息将会反馈到后台日志供开发者查看 并可由开发者查看后处理回复反馈</li>
+</ul>
+<h4 id="处理反馈-dealfeedback"><a href="#处理反馈-dealfeedback" class="headerlink" title="处理反馈 dealfeedback"></a><em>处理反馈 <code>dealfeedback</code></em></h4><ul>
+<li>命令格式：<code>feedback &lt;编号&gt; &lt;反馈内容&gt;</code></li>
+<li>同义格式：<code>处理反馈</code>、<code>反馈处理</code>、<code>dealFeedback</code></li>
+<li>所需权限：仅开发者</li>
+<li>功能说明：开发者用于回复信息反馈内容的命令</li>
+</ul>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h3 id="推文推送命令"><a href="#推文推送命令" class="headerlink" title="推文推送命令"></a>推文推送命令</h3><h4 id="启动监听-runTweetListener"><a href="#启动监听-runTweetListener" class="headerlink" title="启动监听 runTweetListener"></a>启动监听 <code>runTweetListener</code></h4><ul>
+<li><p>命令格式：<code>runTweetListener</code></p>
+</li>
+<li><p>同义格式：<code>启动监听</code></p>
+</li>
+<li><p>所需权限：超级管理员, @bot</p>
+</li>
+<li><p>功能说明：用于推特流断连后尝试重启监听 如已启动则会警告</p>
+</li>
+</ul>
+<h4 id="移除全部监听-delall"><a href="#移除全部监听-delall" class="headerlink" title="移除全部监听 delall"></a>移除全部监听 <code>delall</code></h4><ul>
+<li><p>命令格式：<code>delall</code></p>
+</li>
+<li><p>同义格式：<code>这里单推bot</code></p>
+</li>
+<li><p>所需权限：超级管理员/群主, @bot</p>
+</li>
+<li><p>功能：移除当前私聊/群的所有监听</p>
+</li>
+</ul>
+<h4 id="查看监听列表-getpushlist"><a href="#查看监听列表-getpushlist" class="headerlink" title="查看监听列表 getpushlist"></a>查看监听列表 <code>getpushlist</code></h4><ul>
+<li><p>命令格式：<code>getpushlist &lt;页码-可选&gt;</code></p>
+</li>
+<li><p>同义格式：<code>DD列表</code></p>
+</li>
+<li><p>所需权限：超级管理员/群管理/群主/好友私聊</p>
+</li>
+<li><p>功能：获取当前私聊/群的监听列表，页数默认为1。</p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/chenxuan353/tweetToQQbot/master/readme/image-20200428114040218.png" alt="image-20200428114040218"></p>
+<h4 id="获取用户信息-getuserinfo"><a href="#获取用户信息-getuserinfo" class="headerlink" title="获取用户信息 getuserinfo"></a>获取用户信息 <code>getuserinfo</code></h4><ul>
+<li><p>命令格式：<code>getuserinfo &lt;推特用户ID&gt;</code></p>
+</li>
+<li><p>同义格式：<code>查询推特用户 &lt;推特用户ID&gt;</code> </p>
+</li>
+<li><p>所需权限：超级管理员/好友私聊/群管理/群主, @bot</p>
+</li>
+<li><p>功能：获取当前私聊/群的监听列表</p>
+</li>
+</ul>
+<p>例：<code>getuserinfo shiranuiflare</code></p>
+<p><img src="https://raw.githubusercontent.com/chenxuan353/tweetToQQbot/master/readme/image-20200428113938381.png" alt="image-20200428113938381"></p>
+<h4 id="添加监听对象-addone"><a href="#添加监听对象-addone" class="headerlink" title="添加监听对象 addone"></a>添加监听对象 <code>addone</code></h4><ul>
+<li><p>命令格式：<code>addone &lt;推特用户ID&gt; &lt;称呼&gt; &lt;描述&gt;</code></p>
+</li>
+<li><p>同义格式：<code>给俺D一个 &lt;推特用户ID&gt; &lt;称呼&gt; &lt;描述&gt;</code></p>
+</li>
+<li><p>所需权限：超级管理员/好友私聊/群管理/群主, @bot</p>
+</li>
+<li><p>功能说明：添加一个用户到本群监听</p>
+</li>
+<li><p>使用例：<code>给俺D一个 shirakamifubuki 吹雪 我永远喜欢小狐狸</code></p>
+<p>(不设置昵称)使用例：<code>给俺D一个 shirakamifubuki  我永远喜欢小狐狸</code></p>
+<p>(完全无参数)使用例：<code>给俺D一个 shirakamifubuki</code></p>
+<p><strong>※ 跨参数设置同样需要空格分割，完全不设置参数时可以不添加空格</strong></p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/chenxuan353/tweetToQQbot/master/readme/image-20200428113806819.png" alt="image-20200428113806819"></p>
+<h4 id="删除监听对象-delone"><a href="#删除监听对象-delone" class="headerlink" title="删除监听对象 delone"></a>删除监听对象 <code>delone</code></h4><ul>
+<li><p>命令格式：<code>delone &lt;推特用户ID&gt;</code></p>
+</li>
+<li><p>同义格式：<code>我不想D了</code></p>
+</li>
+<li><p>所需权限：超级管理员/群管理/群主/好友私聊, @bot</p>
+</li>
+<li><p>功能说明：移除一个本群监听的用户</p>
+</li>
+</ul>
+<h4 id="显示BOT推送设置-getGroupSetting"><a href="#显示BOT推送设置-getGroupSetting" class="headerlink" title="显示BOT推送设置 getGroupSetting"></a>显示BOT推送设置 getGroupSetting</h4><ul>
+<li><p>命令格式：<code>getGroupSetting</code></p>
+</li>
+<li><p>同义格式：<code>全局设置列表</code></p>
+</li>
+<li><p>所需权限：超级管理员/群管理/群主/好友私聊, @bot</p>
+</li>
+<li><p>功能说明：显示当前私聊/群的全局推送设置</p>
+</li>
+</ul>
+<h4 id="显示推送设置-getSetting"><a href="#显示推送设置-getSetting" class="headerlink" title="显示推送设置 getSetting"></a>显示推送设置 getSetting</h4><ul>
+<li><p>命令格式：<code>getSetting &lt;推特用户ID&gt;</code></p>
+</li>
+<li><p>同义格式：<code>对象设置列表</code></p>
+</li>
+<li><p>所需权限：超级管理员/群管理/群主/好友私聊, @bot</p>
+</li>
+<li><p>功能说明：显示当前私聊/群的某个监听对象的推送设置</p>
+</li>
+</ul>
+<h4 id="设置推送属性-setGroupAttr"><a href="#设置推送属性-setGroupAttr" class="headerlink" title="设置推送属性 setGroupAttr"></a>设置推送属性 setGroupAttr</h4><ul>
+<li><p>命令格式：<code>setGroupAttr &lt;属性&gt; &lt;值&gt;</code></p>
+</li>
+<li><p>同义格式：<code>全局设置</code></p>
+</li>
+<li><p>所需权限：超级管理员/群管理/群主/好友私聊, @bot</p>
+</li>
+<li><p>功能说明：移除一个本群监听的用户</p>
+</li>
+</ul>
+<p>例：setGroupAttr 转推 关</p>
+<h5 id="支持的属性列表-大小写不敏感"><a href="#支持的属性列表-大小写不敏感" class="headerlink" title="支持的属性列表(大小写不敏感)"></a>支持的属性列表(大小写不敏感)</h5><p><strong>※ 属性名称，别名1，…，别名n</strong></p>
+<h6 id="携带图片发送"><a href="#携带图片发送" class="headerlink" title="携带图片发送"></a>携带图片发送</h6><blockquote>
+<p>upimg，图片，img</p>
+</blockquote>
+<h5 id="消息模版-参数为模版字符串"><a href="#消息模版-参数为模版字符串" class="headerlink" title="消息模版(参数为模版字符串)"></a>消息模版(参数为模版字符串)</h5><blockquote>
+<p>retweet_template,转推模版</p>
+<p>quoted_template,转推并评论模版</p>
+<p>reply_to_status_template,回复模版</p>
+<p>reply_to_user_template,被提及模版</p>
+<p>none_template,发推模版</p>
+</blockquote>
+<h5 id="推特转发各类型开关"><a href="#推特转发各类型开关" class="headerlink" title="推特转发各类型开关"></a>推特转发各类型开关</h5><ul>
+<li>属性</li>
+</ul>
+<blockquote>
+<p>retweet,转推</p>
+<p>quoted,转推并评论</p>
+<p>reply_to_status,回复</p>
+<p>reply_to_user,被提及</p>
+<p>none,发推</p>
+</blockquote>
+<ul>
+<li>值</li>
+</ul>
+<blockquote>
+<p>true,开,打开,开启,1</p>
+<p>false,关,关闭,0</p>
+</blockquote>
+<h5 id="推特个人信息变动推送开关"><a href="#推特个人信息变动推送开关" class="headerlink" title="推特个人信息变动推送开关"></a>推特个人信息变动推送开关</h5><h6 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h6><blockquote>
+<p>change_id,ID改变</p>
+<p>change_name,名称改变</p>
+<p>change_description,描述改变</p>
+<p>change_headimgchange,头像改变</p>
+</blockquote>
+<h6 id="支持的值"><a href="#支持的值" class="headerlink" title="支持的值"></a>支持的值</h6><blockquote>
+<p>true,开,打开,开启,1</p>
+<p>false,关,关闭,0</p>
+</blockquote>
+<h4 id="模版字符串说明"><a href="#模版字符串说明" class="headerlink" title="模版字符串说明"></a>模版字符串说明</h4><h5 id="默认模版"><a href="#默认模版" class="headerlink" title="默认模版"></a>默认模版</h5><h6 id="发推"><a href="#发推" class="headerlink" title="发推"></a>发推</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">推特ID：$tweet_id_min，【$tweet_nick】发布了：\n$tweet_text\n$media_img</span><br></pre></td></tr></table></figure>
+
+<h6 id="转推"><a href="#转推" class="headerlink" title="转推"></a>转推</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">推特ID：$tweet_id_min，【$tweet_nick】转了【$related_user_name】的推特：\n$tweet_text\n$media_img</span><br></pre></td></tr></table></figure>
+
+<h6 id="转发并评论"><a href="#转发并评论" class="headerlink" title="转发并评论"></a>转发并评论</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">推特ID：$tweet_id_min，【$tweet_nick】转发并评论了【$related_user_name】的推特：\n$tweet_text\n&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;\n$related_tweet_text\n$media_img</span><br></pre></td></tr></table></figure>
+
+<h6 id="回复与被提及"><a href="#回复与被提及" class="headerlink" title="回复与被提及"></a>回复与被提及</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">推特ID：$tweet_id_min，【$tweet_nick】回复了【$related_user_name】：\n$tweet_text\n$media_img</span><br></pre></td></tr></table></figure>
+
+<h6 id="模版支持的变量"><a href="#模版支持的变量" class="headerlink" title="模版支持的变量"></a>模版支持的变量</h6><p>​    注：使用<code>\n</code>替代换行符，理论上直接换行也可以但是十分不推荐</p>
+<blockquote>
+<p>$tweet_id 推特ID</p>
+<p>$tweet_id_min 压缩推特id</p>
+<p>$tweet_nick 操作人昵称</p>
+<p>$tweet_user_id 操作人ID</p>
+<p>$tweet_text 发送推特的完整内容</p>
+<p>$related_user_id 关联用户ID</p>
+<p>$related_user_name 关联用户昵称-昵称-昵称查询不到时为ID(被评论/被转发/被提及)</p>
+<p>$related_tweet_id 关联推特ID(被评论/被转发)</p>
+<p>$related_tweet_id_min 关联推特ID的压缩(被评论/被转发)</p>
+<p>$related_tweet_text 关联推特内容(被转发或被转发并评论时存在)</p>
+<p>$media_img 推特携带的图片</p>
+</blockquote>
+<h4 id="更改监听对象属性-setAttr"><a href="#更改监听对象属性-setAttr" class="headerlink" title="更改监听对象属性 setAttr"></a>更改监听对象属性 setAttr</h4><ul>
+<li><p>命令格式：<code>setAttr &lt;监听用户UID&gt; &lt;属性&gt; &lt;值&gt;</code></p>
+</li>
+<li><p>同义格式：<code>对象设置</code></p>
+</li>
+<li><p>所需权限：超级管理员/群管理/群主/好友私聊, @bot</p>
+</li>
+<li><p>功能说明：设置指定监听对象的属性</p>
+</li>
+</ul>
+<p>例：<code>setGroupAttr 997786053124616192 转推 关</code></p>
+<p>​        <code>setGroupAttr 997786053124616192 昵称</code></p>
+<p>​        <code>setGroupAttr 997786053124616192 昵称 FBKwaring</code></p>
+<p>※ UID可以通过命令<strong>getpushlist</strong>查看，大部分属性与<strong>setGroupAttr</strong>命令相同</p>
+<h5 id="特有的属性支持"><a href="#特有的属性支持" class="headerlink" title="特有的属性支持"></a>特有的属性支持</h5><p><strong>※ 属性名称，别名1，…，别名n</strong></p>
+<blockquote>
+<p>nick,昵称</p>
+<p>des,描述</p>
+</blockquote>
+<h4 id="删除推送对象-globalRemove"><a href="#删除推送对象-globalRemove" class="headerlink" title="删除推送对象 globalRemove"></a>删除推送对象 globalRemove</h4><ul>
+<li><p>命令格式：<code>globalRemove 消息类型 Q号/群号</code></p>
+</li>
+<li><p>同义格式：<code>全局移除</code></p>
+</li>
+<li><p>所需权限：超级管理员/好友私聊, @bot</p>
+</li>
+<li><p>功能说明：移除某个人或某个群的所有监听，用于修复配置错误(退出群/删除好友时不在线)</p>
+</li>
+</ul>
+<h5 id="消息类型"><a href="#消息类型" class="headerlink" title="消息类型"></a>消息类型</h5><blockquote>
+<p>私聊,好友,private</p>
+<p>群聊,群,group</p>
+</blockquote>
+<p>例：<code>globalRemove 群聊 123456</code></p>
+<h4 id="查询推特用户信息-getuserinfo"><a href="#查询推特用户信息-getuserinfo" class="headerlink" title="查询推特用户信息 getuserinfo"></a>查询推特用户信息 getuserinfo</h4><ul>
+<li><p>命令格式：<code>getuserinfo &lt;用户UID/用户ID&gt;</code></p>
+</li>
+<li><p>同义格式：<code>查询推特用户</code></p>
+</li>
+<li><p>所需权限：超级管理员/好友私聊, @bot</p>
+</li>
+<li><p>功能说明：查询某个用户的信息，显示的头像将会更新(新增与减少监听不会重新下载头像)</p>
+</li>
+</ul>
+<h4 id="全局移除-globalRemove"><a href="#全局移除-globalRemove" class="headerlink" title="全局移除 globalRemove"></a>全局移除 globalRemove</h4><ul>
+<li>命令格式：<code>globalRemove &lt;private/私聊/group/群聊&gt; &lt;QQ号/群号&gt;</code></li>
+<li>同义格式：<code>全局移除</code></li>
+<li>所需权限：超级管理员, @bot</li>
+<li>功能说明：移除某个人或某个群的所有监测，用于修复配置错误(退出群/删除好友时不在线)</li>
+</ul>
+<h4 id="压缩推特ID-entweetid"><a href="#压缩推特ID-entweetid" class="headerlink" title="压缩推特ID entweetid"></a>压缩推特ID <code>entweetid</code></h4><ul>
+<li><p>命令格式：<code>entweetid &lt;推文ID&gt;</code></p>
+</li>
+<li><p>同义格式：<code>推特ID压缩</code>、<code>压缩ID</code></p>
+</li>
+<li><p>所需权限：无限制</p>
+</li>
+<li><p>功能说明：将推文ID压缩为缩写推文ID</p>
+</li>
+</ul>
+<h4 id="解压推特ID-detweetid"><a href="#解压推特ID-detweetid" class="headerlink" title="解压推特ID detweetid"></a>解压推特ID <code>detweetid</code></h4><ul>
+<li><p>命令格式：<code>detweetid &lt;缩写推文ID&gt;</code></p>
+</li>
+<li><p>同义格式：<code>推特ID解压</code>、<code>解压ID</code></p>
+</li>
+<li><p>所需权限：无限制</p>
+</li>
+<li><p>功能说明：将缩写推文ID解压为推文ID</p>
+</li>
+</ul>
+<h3 id="推文翻译命令列表"><a href="#推文翻译命令列表" class="headerlink" title="推文翻译命令列表"></a>推文翻译命令列表</h3><h4 id="烤推授权-transswitch"><a href="#烤推授权-transswitch" class="headerlink" title="烤推授权 transswitch"></a>烤推授权 <code>transswitch</code></h4><ul>
+<li><p>命令格式：<code>globalRemove &lt;private/私聊/group/群聊&gt; &lt;QQ号/群号&gt;</code></p>
+</li>
+<li><p>同义格式：<code>ts</code>、<code>烤推授权</code></p>
+</li>
+<li><p>所需权限：群聊, 群主/超级管理员, @bot</p>
+</li>
+<li><p>功能说明：为群聊添加/移除烤推授权(开关功能)</p>
+</li>
+</ul>
+<h4 id="翻译推特-trans"><a href="#翻译推特-trans" class="headerlink" title="翻译推特 trans"></a>翻译推特 <code>trans</code></h4><ul>
+<li><p>命令格式：<code>trans &lt;推文ID/缩写推文ID&gt; &lt;翻译文本&gt;</code></p>
+</li>
+<li><p>同义格式：<code>t</code>、<code>烤推</code></p>
+</li>
+<li><p>所需权限：无限制</p>
+</li>
+<li><p>功能说明：为某条推文添加翻译，由BOT完成嵌字并返回。翻译文本支持多行，不支持转义字符(TODO: 对emoji的支持尚需完善)</p>
+</li>
+</ul>
+<h4 id="获取推特翻译列表-translist"><a href="#获取推特翻译列表-translist" class="headerlink" title="获取推特翻译列表 translist"></a>获取推特翻译列表 <code>translist</code></h4><ul>
+<li><p>命令格式：<code>translist &lt;页数&gt;</code>或 <code>translist</code>(translist默认值为1)</p>
+</li>
+<li><p>同义格式：<code>tl</code>、<code>烤推列表</code></p>
+</li>
+<li><p>所需权限：无限制</p>
+</li>
+<li><p>功能说明：获取已翻译推特列表</p>
+</li>
+</ul>
+<h4 id="获取翻译文本-gettrans"><a href="#获取翻译文本-gettrans" class="headerlink" title="获取翻译文本 gettrans"></a>获取翻译文本 <code>gettrans</code></h4><ul>
+<li><p>命令格式：<code>gettrans &lt;推文ID/缩写推文ID&gt;</code></p>
+</li>
+<li><p>同义格式：<code>gt</code>、<code>获取翻译</code></p>
+</li>
+<li><p>所需权限：无限制</p>
+</li>
+<li><p>功能说明：获取某条推文的翻译文本</p>
+</li>
+</ul>
+<h4 id="获取烤推帮助-transabout"><a href="#获取烤推帮助-transabout" class="headerlink" title="获取烤推帮助 transabout"></a>获取烤推帮助 <code>transabout</code></h4><ul>
+<li>命令格式：<code>transabout</code></li>
+<li>同义格式：<code>ta</code>、<code>烤推帮助</code></li>
+<li>所需权限：无限制</li>
+<li>功能说明：获取烤推流程相关命令帮助说明</li>
+</ul>
+<h4 id="按类型获取推文翻译-typeGettrans"><a href="#按类型获取推文翻译-typeGettrans" class="headerlink" title="按类型获取推文翻译 typeGettrans"></a><em>按类型获取推文翻译 <code>typeGettrans</code></em></h4><ul>
+<li>命令格式：<code>typeGettrans &lt;推文翻译类型&gt;</code></li>
+<li>同义格式：<code>tgt</code></li>
+<li>所需权限：超级管理员/开发者</li>
+<li>功能说明：仅供开发者使用的推文翻译获取方法</li>
+</ul>
+<h3 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a><em>权限管理</em></h3><p>该部分仅供超级管理员/开发者使用</p>
+<h4 id="获取合法权限组列表-legalGroupList"><a href="#获取合法权限组列表-legalGroupList" class="headerlink" title="获取合法权限组列表 legalGroupList"></a>获取合法权限组列表 <code>legalGroupList</code></h4><ul>
+<li>命令格式：<code>legalGroupList</code></li>
+<li>同义格式：<code>合法组权限列表</code></li>
+<li>所需权限：超级管理员/开发者</li>
+<li>功能说明：获取合法可授权模块(合法权限组列表)</li>
+</ul>
+<h4 id="获取合法权限列表-legalPermList"><a href="#获取合法权限列表-legalPermList" class="headerlink" title="获取合法权限列表 legalPermList"></a>获取合法权限列表 <code>legalPermList</code></h4><ul>
+<li>命令格式：<code>legalPermList &lt;合法权限组名&gt;</code></li>
+<li>同义格式：<code>合法权限列表</code></li>
+<li>所需权限：超级管理员/开发者</li>
+<li>功能说明：获取某合法权限组内具体可用命令(具体合法权限)</li>
+</ul>
+<h4 id="权限组列表-permGroupList"><a href="#权限组列表-permGroupList" class="headerlink" title="权限组列表 permGroupList"></a>权限组列表 <code>permGroupList</code></h4><ul>
+<li>命令格式：<code>permGroupList &lt;类型&gt; &lt;ID&gt;</code></li>
+<li>同义格式：<code>权限组列表</code></li>
+<li>所需权限：超级管理员/开发者</li>
+<li>功能说明：获取某群聊/聊天所有权限组列表</li>
+</ul>
+<h4 id="权限列表-permList"><a href="#权限列表-permList" class="headerlink" title="权限列表 permList"></a>权限列表 <code>permList</code></h4><ul>
+<li>命令格式：<code>permList &lt;权限组名&gt;</code></li>
+<li>同义格式：<code>tgt</code></li>
+<li>所需权限：超级管理员/开发者</li>
+<li>功能说明：获取某群聊/聊天权限组内权限列表</li>
+</ul>
+<h4 id="添加权限-permAdd"><a href="#添加权限-permAdd" class="headerlink" title="添加权限 permAdd"></a>添加权限 <code>permAdd</code></h4><ul>
+<li>命令格式：<code>permAdd &lt;群号&gt; &lt;权限组名&gt;</code></li>
+<li>同义格式：<code>添加权限</code></li>
+<li>所需权限：超级管理员/开发者</li>
+<li>功能说明：添加某群组/聊天权限</li>
+</ul>
+<h4 id="移除权限-permDel"><a href="#移除权限-permDel" class="headerlink" title="移除权限 permDel"></a>移除权限 <code>permDel</code></h4><ul>
+<li>命令格式：<code>permDel &lt;群号&gt; &lt;权限组名&gt;</code></li>
+<li>同义格式：<code>移除权限</code></li>
+<li>所需权限：超级管理员/开发者</li>
+<li>功能说明：移除某群组/聊天权限</li>
+</ul>
+<h3 id="翻译功能"><a href="#翻译功能" class="headerlink" title="翻译功能"></a>翻译功能</h3><h4 id="翻译功能设置-mtransopt"><a href="#翻译功能设置-mtransopt" class="headerlink" title="翻译功能设置 mtransopt"></a>翻译功能设置 <code>mtransopt</code></h4><ul>
+<li>命令格式：<code>mtransopt &lt;设置&gt;</code></li>
+<li>同义格式：<code>翻译设置</code></li>
+<li>所需权限：@bot</li>
+<li>功能说明：进行机器翻译功能设置</li>
+</ul>
+<h5 id="机翻功能说明"><a href="#机翻功能说明" class="headerlink" title="机翻功能说明"></a>机翻功能说明</h5><p>本BOT提供谷歌和腾讯两种翻译API：</p>
+<ul>
+<li>腾讯为自动识别语言 翻译为中文</li>
+<li>谷歌可指定源语言与目标语言</li>
+</ul>
+<h5 id="设置选项"><a href="#设置选项" class="headerlink" title="设置选项"></a>设置选项</h5><h6 id="谷歌翻译"><a href="#谷歌翻译" class="headerlink" title="谷歌翻译"></a>谷歌翻译</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;设置&gt; &#x3D; 谷歌 &lt;源语言&gt; &lt;目标语言&gt;</span><br></pre></td></tr></table></figure>
+
+<p>使用例：</p>
+<blockquote>
+<p>!翻译设置 谷歌 中 日</p>
+</blockquote>
+<p>即「使用谷歌API将中文翻译为日文」</p>
+<h6 id="腾讯翻译"><a href="#腾讯翻译" class="headerlink" title="腾讯翻译"></a>腾讯翻译</h6><p>自动识别默认使用腾讯API</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;设置&gt; &#x3D; 腾讯</span><br></pre></td></tr></table></figure>
+<p>即可</p>
+<h4 id="机器翻译-mtrans"><a href="#机器翻译-mtrans" class="headerlink" title="机器翻译 mtrans"></a>机器翻译 <code>mtrans</code></h4><ul>
+<li>命令格式：<code>mtrans &lt;文本内容&gt;</code></li>
+<li>同义格式：<code>机翻</code>、<code>翻译</code>、<code>mt</code></li>
+<li>所需权限：@bot</li>
+<li>功能说明：进行机器翻译</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://chenxuan353.github.io/tweetToBot/2020/06/08/command-docs/" data-id="ckdfon4zv00007ssycfj5hndo" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tweetToBot/tags/%E4%BD%BF%E7%94%A8/" rel="tag">使用</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tweetToBot/tags/%E5%8A%9F%E8%83%BD/" rel="tag">功能</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tweetToBot/tags/%E5%91%BD%E4%BB%A4/" rel="tag">命令</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tweetToBot/tags/%E6%96%87%E6%A1%A3/" rel="tag">文档</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/tweetToBot/2020/06/08/deploy-docs/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">部署文档</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/tweetToBot/categories/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/">项目文档</a></li><li class="category-list-item"><a class="category-list-link" href="/tweetToBot/categories/%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8B/">项目简介</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E4%BD%BF%E7%94%A8/" rel="tag">使用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E5%8A%9F%E8%83%BD/" rel="tag">功能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E5%91%BD%E4%BB%A4/" rel="tag">命令</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E5%BC%80%E5%8F%91/" rel="tag">开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E6%83%85%E5%86%B5/" rel="tag">情况</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E6%96%87%E6%A1%A3/" rel="tag">文档</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E6%A6%82%E8%BF%B0/" rel="tag">概述</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" rel="tag">注意事项</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E7%AE%80%E4%BB%8B/" rel="tag">简介</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tweetToBot/tags/%E9%83%A8%E7%BD%B2/" rel="tag">部署</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tweetToBot/tags/%E4%BD%BF%E7%94%A8/" style="font-size: 15px;">使用</a> <a href="/tweetToBot/tags/%E5%8A%9F%E8%83%BD/" style="font-size: 10px;">功能</a> <a href="/tweetToBot/tags/%E5%91%BD%E4%BB%A4/" style="font-size: 10px;">命令</a> <a href="/tweetToBot/tags/%E5%BC%80%E5%8F%91/" style="font-size: 10px;">开发</a> <a href="/tweetToBot/tags/%E6%83%85%E5%86%B5/" style="font-size: 15px;">情况</a> <a href="/tweetToBot/tags/%E6%96%87%E6%A1%A3/" style="font-size: 15px;">文档</a> <a href="/tweetToBot/tags/%E6%A6%82%E8%BF%B0/" style="font-size: 10px;">概述</a> <a href="/tweetToBot/tags/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" style="font-size: 20px;">注意事项</a> <a href="/tweetToBot/tags/%E7%AE%80%E4%BB%8B/" style="font-size: 15px;">简介</a> <a href="/tweetToBot/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">部署</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/tweetToBot/archives/2020/06/">June 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/tweetToBot/2020/06/08/command-docs/">命令使用文档</a>
+          </li>
+        
+          <li>
+            <a href="/tweetToBot/2020/06/08/deploy-docs/">部署文档</a>
+          </li>
+        
+          <li>
+            <a href="/tweetToBot/2020/06/08/develop-status/">开发情况</a>
+          </li>
+        
+          <li>
+            <a href="/tweetToBot/2020/06/08/introduction/">项目概述</a>
+          </li>
+        
+          <li>
+            <a href="/tweetToBot/2020/06/08/test/">test</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 ChenXuan &amp; Cyame<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/tweetToBot/" class="mobile-nav-link">Home</a>
+  
+    <a href="/tweetToBot/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/tweetToBot/fancybox/jquery.fancybox.css">
+
+  
+<script src="/tweetToBot/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/tweetToBot/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
